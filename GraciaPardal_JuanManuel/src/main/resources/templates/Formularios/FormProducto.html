@@ -22,10 +22,9 @@
             <input th:field="*{precio}" type="number" class="form-control" id="inputPrecio" placeholder="Precio">
           </div>
         </div>
-      <div>
-        <input th:field="*{estado}" type="boolean" class="form-control" id="inputEstado" placeholder="Precio" th:value="TRUE" hidden>
+      <div class="form-group col-md-6">
+        <input th:field="*{estado}" type="boolean" class="form-control" id="inputEstado" placeholder="Precio"hidden>
       </div>
-
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="inputCategoria">Categoria</label>
@@ -34,7 +33,15 @@
             </select>
           </div>
         </div>
+      <div>
+       <input type="number" id="id" th:field="*{id}" hidden/>
+      </div>
+      <div>
+        <input  id="estado" th:field="*{estado}" hidden/>
+      </div>
+
         <button type="submit" class="btn btn-primary">Guardar</button>
+
       </form>
 
 

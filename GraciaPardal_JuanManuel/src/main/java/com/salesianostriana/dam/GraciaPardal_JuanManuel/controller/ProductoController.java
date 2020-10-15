@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -38,19 +39,53 @@ public class ProductoController  {
     @PostMapping("/submit")
     public String AñadirProducto(@ModelAttribute Producto producto){
 
-        if (productoServi.findAll().contains(producto)){
-            System.out.println(producto.getId());
+        Boolean guardado= null;
+        for (Producto p:  productoServi.findAll()){
+            if(p.getId().equals(producto.getId())){
+                guardado = true;
+            }else{
+                guardado= false;
+            }
 
+
+        }
+        if (guardado){
+            System.out.println(producto.getId()+ " Editado");
             productoServi.edit(producto);
 
         }else{
 
+            producto.setEstado(true);
             productoServi.save(producto);
-            System.out.println(producto.getId());
+            System.out.println(producto.getId()+  " Guardado");
         }
 
         return "redirect:/";
 
     }
+
+    @GetMapping("/edit/{id}")
+    public String editarProducto(@PathVariable Long id, Model model){
+
+        Producto productoS = productoServi.findById(id);
+
+        model.addAttribute("producto", productoS);
+        model.addAttribute("categorias", categoriaServi.findAll());
+
+
+        return "Formularios/FormProducto";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String eliminarProducto(@PathVariable Long id){
+
+       productoServi.findById(id).setEstado(false);
+       productoServi.edit(productoServi.findById(id));
+
+       return "redirect:/";
+    }
+
+
+
 
 }

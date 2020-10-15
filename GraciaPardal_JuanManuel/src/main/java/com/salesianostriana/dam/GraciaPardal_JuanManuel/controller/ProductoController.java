@@ -1,5 +1,6 @@
 package com.salesianostriana.dam.GraciaPardal_JuanManuel.controller;
 
+import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Categoria;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Producto;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.CategoriaServi;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.ProductoServi;
@@ -30,6 +31,7 @@ public class ProductoController  {
 
     @GetMapping("/nuevoProducto")
     public String MostrarForm (Model model){
+        model.addAttribute("categoria", new Categoria());
         model.addAttribute("categorias", categoriaServi.findAll());
         model.addAttribute("producto", new Producto());
 
@@ -71,6 +73,7 @@ public class ProductoController  {
 
         model.addAttribute("producto", productoS);
         model.addAttribute("categorias", categoriaServi.findAll());
+        model.addAttribute("categoria", new Categoria());
 
 
         return "Formularios/FormProducto";

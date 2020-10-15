@@ -48,11 +48,11 @@
 
 
       </form>
-    <button th:attr="data-target='#miModalCategoria' +${prod.id}" class="btn btn-secondary"  data-toggle="modal">Nueva categoria</button>
+    <button th:attr="data-target='#miModalCategoria' +${producto.id}" class="btn btn-secondary"  data-toggle="modal">Nueva categoria</button>
 
 
     <!-- Modal -->
-    <div class="modal fade" id="miModalCategoria" tabindex="-1" role="dialog" aria-labelledby="recordDeleteModalLabel" aria-hidden="true">
+    <div class="modal fade" th:attr="id='miModalCategoria' +${producto.id}"  id="miModalCategoria" tabindex="-1" role="dialog" aria-labelledby="recordDeleteModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">

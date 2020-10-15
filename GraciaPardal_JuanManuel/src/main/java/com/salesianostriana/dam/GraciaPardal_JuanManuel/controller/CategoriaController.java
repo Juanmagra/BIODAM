@@ -18,6 +18,7 @@ public class CategoriaController {
 
     private final CategoriaServi categoriaServi;
     private final ProductoServi productoServi;
+    private CategoriaProducto categoriaProducto;
 
 //    @GetMapping("/categoria/nueva")
 //    public String MostrarForm (Model model){
@@ -28,16 +29,20 @@ public class CategoriaController {
 
     @PostMapping("/submit/categoria")
     public  String guardarCat(@ModelAttribute CategoriaProducto categoriaProducto, Model model){
-        categoriaServi.save(new Categoria(categoriaProducto.getIdCategoria(), categoriaProducto.getNombreCat()));
-        Producto producto = productoServi.findById(categoriaProducto.getIdProducto());
+        model.addAttribute("categoriaProducto", categoriaProducto);
 
-        model.addAttribute("producto", producto);
+        categoriaServi.save(new Categoria(1L, categoriaProducto.getNombreCat()));
+        if (categoriaProducto.getIdProducto()!=null) {
+            Producto producto = productoServi.findById(categoriaProducto.getIdProducto());
+            model.addAttribute("producto", producto);
+        }
 
+        if (categoriaProducto.getIdProducto()!=null) {
+            return "redirect:/edit/" + categoriaProducto.getIdProducto();
 
-
-
-        return "redirect:/nuevoProducto";
-
+        }else{
+            return "redirect:/nuevoProducto";
+        }
 
     }
 

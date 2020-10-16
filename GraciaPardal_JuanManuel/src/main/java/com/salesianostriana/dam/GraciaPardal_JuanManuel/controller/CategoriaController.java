@@ -20,12 +20,6 @@ public class CategoriaController {
     private final ProductoServi productoServi;
     private CategoriaProducto categoriaProducto;
 
-//    @GetMapping("/categoria/nueva")
-//    public String MostrarForm (Model model){
-//        model.addAttribute("categoria", new Categoria());
-//
-//        return "redirect:/nuevoProducto";
-//    }
 
     @PostMapping("/submit/categoria")
     public  String guardarCat(@ModelAttribute CategoriaProducto categoriaProducto, Model model){

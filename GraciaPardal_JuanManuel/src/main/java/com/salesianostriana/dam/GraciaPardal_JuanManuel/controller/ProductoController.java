@@ -51,8 +51,6 @@ public class ProductoController  {
             }else{
                 guardado= false;
             }
-
-
         }
         if (guardado){
             System.out.println(producto.getId()+ " Editado");

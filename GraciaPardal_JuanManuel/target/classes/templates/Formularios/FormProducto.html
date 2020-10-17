@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Formulario de producto</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <form method="post" action="#"
+    th:action="@{/submit}" th:object="${producto}">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputNombre">Nombre del producto</label>
+            <input  type="text" class="form-control" id="inputNombre" placeholder="Nombre" th:field="*{nombre}">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPrecio">Precio</label>
+            <input th:field="*{precio}" type="number" class="form-control" id="inputPrecio" placeholder="Precio">
+          </div>
+        </div>
+      <div class="form-group col-md-6">
+        <input th:field="*{estado}" type="boolean" class="form-control" id="inputEstado" placeholder="Precio"hidden>
+      </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputCategoria">Categoria</label>
+            <select th:field="*{categoria}" id="inputCategoria" class="form-control">
+              <option th:each="i : ${categorias}" th:value="${i.id}" th:text="${i.nombre}">Choose...</option>
+
+
+            </select>
+          </div>
+        </div>
+      <div>
+       <input type="number" id="id" th:field="*{id}" hidden/>
+      </div>
+      <div>
+        <input  id="estado" th:field="*{estado}" hidden/>
+      </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+
+
+
+
+      </form>
+    <button th:attr="data-target='#miModalCategoria' +${producto.id}" class="btn btn-secondary"  data-toggle="modal">Nueva categoria</button>
+
+
+    <!-- Modal -->
+    <div class="modal fade" th:attr="id='miModalCategoria' +${producto.id}"  id="miModalCategoria" tabindex="-1" role="dialog" aria-labelledby="recordDeleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="recordDeleteModalLabel">Nueva Categoria</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Indique el nombre de la categoria
+          </div>
+          <form method="post" action="#"
+                th:action="@{/submit/categoria}" th:object="${categoriaProducto}">
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputNombreCategoria">Nombre de categoria </label>
+                <input  type="text" class="form-control" id="inputNombreCategoria" placeholder="Nombre" th:field="*{nombreCat}">
+                <input  type="text" class="form-control" id="inputIdCategoria" placeholder="Nombre" th:field="*{idCategoria}" hidden>
+                <input  type="text" class="form-control" id="inputIdProducto" placeholder="Nombre" th:field="*{idProducto}" hidden>
+                <input  type="text" class="form-control" id="inputNombreProducto" placeholder="Nombre" th:field="*{nombrePro}" hidden>
+                <input  type="text" class="form-control" id="inputPrecioProducto" placeholder="Nombre" th:field="*{precioPro}" hidden>
+                <input  type="text" class="form-control" id="inputEstadoProducto" placeholder="Nombre" th:field="*{estadoPro}" hidden>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </form>
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal end -->
+
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

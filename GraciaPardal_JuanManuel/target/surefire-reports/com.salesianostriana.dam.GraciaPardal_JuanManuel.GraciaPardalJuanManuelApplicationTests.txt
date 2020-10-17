@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.salesianostriana.dam.GraciaPardal_JuanManuel.GraciaPardalJuanManuelApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.146 s - in com.salesianostriana.dam.GraciaPardal_JuanManuel.GraciaPardalJuanManuelApplicationTests

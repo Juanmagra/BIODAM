@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" >
 <head th:replace="fragments/head :: head">
 </head>
 <body>
@@ -34,7 +34,8 @@
                 <a class="nav-link disabled" href="#">Disabled</a>
             </li>
         </ul>
-        <ul th:if="${#noSesion}" class="nav navbar-nav navbar-right">
+        <form name="logoutForm" th:action="@{/logout}" method="POST" id="logoutForm"></form>
+        <ul sec:authorize="hasAnyRole('ADMIN', 'USER')" class="nav navbar-nav navbar-right">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle"
                    data-toggle="dropdown" role="button"
@@ -47,6 +48,7 @@
                     </li>
                 </ul>
         </ul>
+
 
     </div>
 </nav>

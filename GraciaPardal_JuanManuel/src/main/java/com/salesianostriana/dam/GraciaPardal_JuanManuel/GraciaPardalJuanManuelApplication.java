@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.sound.sampled.Line;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class GraciaPardalJuanManuelApplication {
 	}
 
 	@Bean
-	public CommandLineRunner init(LineaPedidoRepo repoLi, PedidoRepo repoPe, ProductoRepo repoPr, UsuarioRepo repoUs, CategoriaRepo repoCa, PedidoServi pedidoSer, UsuarioServi usuarioSer) {
+	public CommandLineRunner init(LineaPedidoRepo repoLi, PedidoRepo repoPe, ProductoRepo repoPr, UsuarioRepo repoUs, CategoriaRepo repoCa, PedidoServi pedidoSer, UsuarioServi usuarioSer, PasswordEncoder passwordEncoder) {
 		return args -> {
 			List listaLinea = new ArrayList();
 			List listaLinea2 = new ArrayList();
@@ -35,11 +36,11 @@ public class GraciaPardalJuanManuelApplication {
 			Date fecha = new Date();
 
 
-			Usuario user = new Usuario(100L, "Juan Manuel", "Gracia", "miEmail@Gmail.com", false, listaPedido);
+			Usuario user = new Usuario(100L, "Juan Usuario", "Gracia", "user@user.com", false, passwordEncoder.encode("user"),listaPedido);
 			repoUs.save(user);
 			user.setId(repoUs.findAll().get(0).getId());
 
-			Usuario admin = new Usuario(100L, "Juan Manuel", "Gracia", "miEmail@Gmail.com", true, listaPedido);
+			Usuario admin = new Usuario(100L, "Juan Admin", "Gracia", "admin@admin.com", true, passwordEncoder.encode("admin"), listaPedido);
 			repoUs.save(admin);
 			admin.setId(repoUs.findAll().get(1).getId());
 

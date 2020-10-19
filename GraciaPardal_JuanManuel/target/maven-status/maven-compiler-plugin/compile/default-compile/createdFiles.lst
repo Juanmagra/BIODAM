@@ -5,9 +5,11 @@ com\salesianostriana\dam\GraciaPardal_JuanManuel\model\Pedido.class
 com\salesianostriana\dam\GraciaPardal_JuanManuel\model\Categoria$CategoriaBuilder.class
 com\salesianostriana\dam\GraciaPardal_JuanManuel\service\base\IBaseService.class
 com\salesianostriana\dam\GraciaPardal_JuanManuel\controller\CategoriaController.class
+com\salesianostriana\dam\GraciaPardal_JuanManuel\security\UserDetailServiceImpl.class
 com\salesianostriana\dam\GraciaPardal_JuanManuel\model\dto\CategoriaProducto.class
 com\salesianostriana\dam\GraciaPardal_JuanManuel\model\LineaPedido$LineaPedidoBuilder.class
 com\salesianostriana\dam\GraciaPardal_JuanManuel\security\SecurityConfig.class
+com\salesianostriana\dam\GraciaPardal_JuanManuel\security\CustomSuccessHandler.class
 com\salesianostriana\dam\GraciaPardal_JuanManuel\service\base\BaseService.class
 com\salesianostriana\dam\GraciaPardal_JuanManuel\model\LineaPedido.class
 com\salesianostriana\dam\GraciaPardal_JuanManuel\controller\ProductoController.class

@@ -23,9 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c2ff6d1-422e-4f86-87a7-53bcc3c4ad0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/db/basededatos.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraciaPardal_JuanManuel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GraciaPardal_JuanManuel.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/basededatos.mv.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/GraciaPardalJuanManuelApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/GraciaPardalJuanManuelApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/GraciaPardalJuanManuelApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/GraciaPardalJuanManuelApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +70,21 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\statics\css\css" />
+      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\statics" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources" />
+      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\statics" />
+      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\statics\css" />
+      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\css" />
+      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\templates" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="GraciaPardal_JuanManuel [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
@@ -119,6 +140,7 @@
     <servers />
   </component>
   <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.sql" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,26 +160,34 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1602675917838" />
+    <state x="446" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602942905908">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="446" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1602942905908" />
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1602942674679">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1602942674679" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1602675210744">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602675210744" />
-    <state width="1323" height="198" key="GridCell.Tab.0.bottom" timestamp="1602861325866">
+    <state width="1323" height="161" key="GridCell.Tab.0.bottom" timestamp="1602971151451">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="198" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602861325866" />
-    <state width="1323" height="198" key="GridCell.Tab.0.center" timestamp="1602861325866">
+    <state width="1323" height="161" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602971151451" />
+    <state width="1323" height="161" key="GridCell.Tab.0.center" timestamp="1602971151451">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="198" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602861325866" />
-    <state width="1323" height="198" key="GridCell.Tab.0.left" timestamp="1602861325866">
+    <state width="1323" height="161" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602971151451" />
+    <state width="1323" height="161" key="GridCell.Tab.0.left" timestamp="1602971151451">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="198" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602861325866" />
-    <state width="1323" height="198" key="GridCell.Tab.0.right" timestamp="1602861325866">
+    <state width="1323" height="161" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602971151451" />
+    <state width="1323" height="161" key="GridCell.Tab.0.right" timestamp="1602971151451">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="198" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602861325866" />
+    <state width="1323" height="161" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602971151451" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1602861220652">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -174,9 +204,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1602861220652" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602674985843">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602943360392">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602674985843" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602943360392" />
   </component>
 </project>

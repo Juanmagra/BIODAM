@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-@SpringBootApplication(exclude={SecurityAutoConfiguration.class})
+@SpringBootApplication()
 public class GraciaPardalJuanManuelApplication {
 
 	public static void main(String[] args) {

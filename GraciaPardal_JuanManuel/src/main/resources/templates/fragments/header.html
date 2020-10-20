@@ -35,6 +35,7 @@
             </ul>
             <a  sec:authorize="!isAuthenticated()" href="#" th:href="@{/login}"><button type="button" href="#"  class="btn btn-primary">Login</button></a>
             <form name="logoutForm" th:action="@{/logout}" method="POST" id="logoutForm"></form>
+
                     <ul sec:authorize="hasAnyRole('ADMIN', 'USER')" class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle"
@@ -52,23 +53,5 @@
     </nav>
 
 </header>
-
-<!--        <form name="logoutForm" th:action="@{/logout}" method="POST" id="logoutForm"></form>-->
-<!--        <ul sec:authorize="hasAnyRole('ADMIN', 'USER')" class="nav navbar-nav navbar-right">-->
-<!--            <li class="dropdown">-->
-<!--                <a href="#" class="dropdown-toggle"-->
-<!--                   data-toggle="dropdown" role="button"-->
-<!--                   aria-haspopup="true" aria-expanded="false">-->
-<!--                    <span th:text="${#authentication.name}">Menú</span> <span class="caret"></span>-->
-<!--                </a>-->
-<!--                <ul class="dropdown-menu">-->
-<!--                    <li>-->
-<!--                        <a href="javascript:document.getElementById('logoutForm').submit()">Salir</a>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--        </ul>-->
-
-
-    <div th:replace="fragments/jsScripts :: scripts"></div>
 </body>
 </html>

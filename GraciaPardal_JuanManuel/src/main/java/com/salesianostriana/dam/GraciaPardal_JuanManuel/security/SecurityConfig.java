@@ -18,6 +18,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final UserDetailServiceImpl userDetailService;
+    private final CustomSuccessHandler customSuccessHandler;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -45,10 +46,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
          .authorizeRequests()
                 .antMatchers("/css/**","/js/**", "/images/**","/register", "/submit-registration","/h2-console/**").permitAll()
+                .antMatchers("/admin/**").hasAnyRole("ADMIN")
+                .antMatchers("/user/**").hasAnyRole("USER")
+                .antMatchers("/").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
+                .successHandler(customSuccessHandler)
                 .permitAll()
                 .and()
                 .logout();

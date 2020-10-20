@@ -127,6 +127,21 @@ th {
 #user-table{
 	width: 100%;
 }
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 110px;
+}
+
+#form-prod{
+    padding-top:90px;
+}
+#boton-cat{
+margin-top:20px;
+margin-bottom:20px;
+margin-right:20px;
+}
 /*================================================================*/
 /*endregion*/
 

@@ -36,11 +36,11 @@ public class GraciaPardalJuanManuelApplication {
 			Date fecha = new Date();
 
 
-			Usuario user = new Usuario(100L, "Juan Usuario", "Gracia", "user@user.com", false, passwordEncoder.encode("user"),listaPedido);
+			Usuario user = new Usuario(100L, "Juan Usuario", "Gracia", "user@user.com", false, passwordEncoder.encode("user"),true,listaPedido);
 			repoUs.save(user);
 			user.setId(repoUs.findAll().get(0).getId());
 
-			Usuario admin = new Usuario(100L, "Juan Admin", "Gracia", "admin@admin.com", true, passwordEncoder.encode("admin"), listaPedido);
+			Usuario admin = new Usuario(100L, "Juan Admin", "Gracia", "admin@admin.com", true, passwordEncoder.encode("admin"), true,listaPedido);
 			repoUs.save(admin);
 			admin.setId(repoUs.findAll().get(1).getId());
 

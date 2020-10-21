@@ -35,6 +35,7 @@ public class Usuario implements UserDetails {
     private String email;
     private Boolean esAdmin;
     private String contraseña;
+    private boolean validado;
 
     @OneToMany(mappedBy = "user")
     private List<Pedido> pedidos = new ArrayList<>();

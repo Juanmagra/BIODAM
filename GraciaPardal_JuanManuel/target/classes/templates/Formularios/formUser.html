@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:margin-top="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+<script>
+        function validarContra(){
+			var contra1 = document.getElementById("inputContraseña");
+   			var contra2 = document.getElementById("inputContraseñaBis");
+    		var resultado = contra1.value !=="" && contra2.value !=="";
+    	if(resultado){
+    		if(contra1.value != contra2.value){
+    		alert("Las dos claves son distintas")
+    			resultado=false;
+    		}else{
+				resultado=true
+			return resultado;
+		}
+
+</script>
+<head th:replace="fragments/head :: head">
+<body>
+<header th:replace="fragments/header :: nav"></header>
+
+<div class="container col-md-8" >
+    <form method="post" action="#"
+          th:action="@{/admin/submit/user}" th:object="${usuario}" id="form-prod">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputNombre">Nombre</label>
+                <input  type="text" class="form-control" id="inputNombre" placeholder="Nombre" th:field="*{nombre}">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputApellidos">Apellido</label>
+                <input th:field="*{apellidos}" type="text" class="form-control" id="inputApellidos" placeholder="Apellidos">
+            </div>
+        </div>
+        <div class="form-group col-md-10">
+            <label for="inputEmail">Email</label>
+            <input th:field="*{email}" type="email" class="form-control" id="inputEmail" placeholder="Email"hidden>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputContraseña">Contraseña</label>
+                <input  type="password" class="form-control" id="inputContraseña" placeholder="Contraseña" th:field="*{contraseña}">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputContraseñaBis">Repetir contraseña</label>
+                <input  type="password" class="form-control" id="inputContraseñaBis" placeholder="Repetir contraseña">
+            </div>
+        </div>
+        <div>
+            <input type="number" id="id" th:field="*{id}" hidden/>
+        </div>
+        <div>
+            <input  type="boolean" id="validado" th:field="*{validado}" hidden/>
+        </div>
+
+        <button type="submit" class="btn btn-primary" onClick="validarContra()">Guardar</button>
+
+
+
+
+    </form>
+
+</div>
+</body>
+</html>

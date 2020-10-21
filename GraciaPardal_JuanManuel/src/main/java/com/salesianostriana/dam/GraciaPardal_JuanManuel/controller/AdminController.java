@@ -22,7 +22,7 @@ public class AdminController {
 
     //Formulario nuevo producto
     @GetMapping("/nuevoProducto")
-    public String MostrarForm (Model model){
+    public String mostrarForm (Model model){
         model.addAttribute("categoriaProducto", categoriaProducto);
         model.addAttribute("categoria", new Categoria());
         model.addAttribute("categorias", categoriaServi.findAll());
@@ -32,7 +32,7 @@ public class AdminController {
     }
     //Nuevo producto
     @PostMapping("/submit")
-    public String AñadirProducto(@ModelAttribute Producto producto){
+    public String añadirProducto(@ModelAttribute Producto producto){
 
         Boolean guardado= null;
         for (Producto p:  productoServi.findAll()){
@@ -83,7 +83,7 @@ public class AdminController {
     }
     //Nueva categoria
     @PostMapping("/submit/categoria")
-    public  String guardarCat(@ModelAttribute CategoriaProducto categoriaProducto, Model model){
+    public  String guardarCategoria(@ModelAttribute CategoriaProducto categoriaProducto, Model model){
         model.addAttribute("categoriaProducto", categoriaProducto);
 
         categoriaServi.save(new Categoria(1L, categoriaProducto.getNombreCat()));
@@ -100,4 +100,6 @@ public class AdminController {
         }
 
     }
+
+
 }

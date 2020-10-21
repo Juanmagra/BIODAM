@@ -22,29 +22,29 @@
 
 <div class="container col-md-8" >
     <form method="post" action="#"
-          th:action="@{/admin/submit/user}" th:object="${usuario}" id="form-prod">
+          th:action="@{/public/submit/user}" th:object="${user}" id="form-prod">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputNombre">Nombre</label>
-                <input  type="text" class="form-control" id="inputNombre" placeholder="Nombre" th:field="*{nombre}">
+                <input required type="text" class="form-control" id="inputNombre" placeholder="Nombre" th:field="*{nombre}">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputApellidos">Apellido</label>
-                <input th:field="*{apellidos}" type="text" class="form-control" id="inputApellidos" placeholder="Apellidos">
+                <input required th:field="*{apellidos}" type="text" class="form-control" id="inputApellidos" placeholder="Apellidos">
             </div>
         </div>
-        <div class="form-group col-md-10">
+        <div class="form-group col-md-12">
             <label for="inputEmail">Email</label>
-            <input th:field="*{email}" type="email" class="form-control" id="inputEmail" placeholder="Email"hidden>
+            <input required th:field="*{email}" type="email" class="form-control" id="inputEmail" placeholder="Email">
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputContraseña">Contraseña</label>
-                <input  type="password" class="form-control" id="inputContraseña" placeholder="Contraseña" th:field="*{contraseña}">
+                <input required type="password" class="form-control" id="inputContraseña" placeholder="Contraseña" th:field="*{contraseña}">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputContraseñaBis">Repetir contraseña</label>
-                <input  type="password" class="form-control" id="inputContraseñaBis" placeholder="Repetir contraseña">
+                <input required type="password" class="form-control" id="inputContraseñaBis" placeholder="Repetir contraseña">
             </div>
         </div>
         <div>
@@ -52,6 +52,9 @@
         </div>
         <div>
             <input  type="boolean" id="validado" th:field="*{validado}" hidden/>
+        </div>
+        <div>
+            <input  type="boolean" id="esAdmin" th:field="*{esAdmin}" hidden/>
         </div>
 
         <button type="submit" class="btn btn-primary" onClick="validarContra()">Guardar</button>

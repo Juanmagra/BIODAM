@@ -33,7 +33,7 @@
                     </div>
                 </li>
             </ul>
-            <a  sec:authorize="!isAuthenticated()" href="#" th:href="@{/public/login}"><button type="button" href="#"  class="btn btn-primary">Login</button></a>
+            <a  sec:authorize="!isAuthenticated()" href="#" th:href="@{/login}"><button type="button" href="#"  class="btn btn-primary">Login</button></a>
             <form name="logoutForm" th:action="@{/logout}" method="POST" id="logoutForm"></form>
 
                     <ul sec:authorize="hasAnyRole('ADMIN', 'USER')" class="nav navbar-nav navbar-right">

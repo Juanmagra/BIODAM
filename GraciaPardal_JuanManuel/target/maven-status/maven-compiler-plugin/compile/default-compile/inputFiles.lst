@@ -1,6 +1,9 @@
+C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\controller\UserController.java
+C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\controller\PublicController.java
 C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\security\CustomSuccessHandler.java
 C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\service\base\IBaseService.java
 C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\model\LineaPedido.java
+C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\controller\AdminController.java
 C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\security\UserDetailServiceImpl.java
 C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\service\LineaPedidoServi.java
 C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\service\CategoriaServi.java
@@ -14,11 +17,9 @@ C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesia
 C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\service\ProductoServi.java
 C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\repository\ProductoRepo.java
 C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\security\SecurityConfig.java
-C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\controller\CategoriaController.java
 C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\model\Categoria.java
 C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\security\MvcConfig.java
 C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\repository\LineaPedidoRepo.java
-C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\controller\ProductoController.java
 C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\service\base\BaseService.java
 C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\repository\PedidoRepo.java
 C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\java\com\salesianostriana\dam\GraciaPardal_JuanManuel\model\dto\CategoriaProducto.java

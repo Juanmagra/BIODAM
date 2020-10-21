@@ -2,13 +2,17 @@ package com.salesianostriana.dam.GraciaPardal_JuanManuel.controller;
 
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Categoria;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Producto;
+import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Usuario;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.dto.CategoriaProducto;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.CategoriaServi;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.ProductoServi;
+import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.UsuarioServi;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @Controller
 @AllArgsConstructor
@@ -17,12 +21,12 @@ public class AdminController {
 
     private final ProductoServi productoServi;
     private final CategoriaServi categoriaServi;
+    private  final UsuarioServi usuarioServi;
     private CategoriaProducto categoriaProducto;
-
 
     //Formulario nuevo producto
     @GetMapping("/nuevoProducto")
-    public String MostrarForm (Model model){
+    public String mostrarForm (Model model){
         model.addAttribute("categoriaProducto", categoriaProducto);
         model.addAttribute("categoria", new Categoria());
         model.addAttribute("categorias", categoriaServi.findAll());
@@ -32,7 +36,7 @@ public class AdminController {
     }
     //Nuevo producto
     @PostMapping("/submit")
-    public String AñadirProducto(@ModelAttribute Producto producto){
+    public String añadirProducto(@ModelAttribute Producto producto){
 
         Boolean guardado= null;
         for (Producto p:  productoServi.findAll()){
@@ -53,7 +57,7 @@ public class AdminController {
             System.out.println(producto.getId()+  " Guardado");
         }
 
-        return "redirect:/";
+        return "redirect:/public/";
 
     }
 
@@ -79,11 +83,11 @@ public class AdminController {
         productoServi.findById(id).setEstado(false);
         productoServi.edit(productoServi.findById(id));
 
-        return "redirect:/";
+        return "redirect:/public/";
     }
     //Nueva categoria
     @PostMapping("/submit/categoria")
-    public  String guardarCat(@ModelAttribute CategoriaProducto categoriaProducto, Model model){
+    public  String guardarCategoria(@ModelAttribute CategoriaProducto categoriaProducto, Model model){
         model.addAttribute("categoriaProducto", categoriaProducto);
 
         categoriaServi.save(new Categoria(1L, categoriaProducto.getNombreCat()));
@@ -100,4 +104,38 @@ public class AdminController {
         }
 
     }
+
+    @GetMapping("/listaValidacion")
+    public String listarValidaciones(Model model){
+
+        if (usuarioServi.usuariosPorValidar().isEmpty()){
+            model.addAttribute("lista", new ArrayList<>());
+        }else{
+            model.addAttribute("lista", usuarioServi.usuariosPorValidar());
+        }
+
+        return usuarioServi.usuariosPorValidar().isEmpty() ? "redirect:/public/" : "validaciones";
+    }
+
+    @GetMapping("/validar/{id}")
+    public  String validarUser(@PathVariable Long id){
+
+        Usuario userEdited = usuarioServi.findById(id); userEdited.setValidado(true);
+        usuarioServi.edit(userEdited);
+
+        return  usuarioServi.usuariosPorValidar().isEmpty() ? "redirect:/admin/listaValidacion": "redirect:/public/";
+
+
+    }
+
+    @GetMapping("/validar/eliminar/{id}")
+    public String borrarUserValidacion(@PathVariable Long id){
+
+        usuarioServi.deleteById(id);
+
+
+        return  usuarioServi.usuariosPorValidar().isEmpty() ? "redirect:/admin/listaValidacion": "redirect:/public/";
+    }
+
+
 }

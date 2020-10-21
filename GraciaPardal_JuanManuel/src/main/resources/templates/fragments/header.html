@@ -7,20 +7,20 @@
 <body>
 <header th:fragment="nav">
     <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg scrolling-navbar">
-        <a class="navbar-brand" href="#"><strong>BioDam</strong></a>
+        <a class="navbar-brand" href="#" th:href="@{/public/}"><strong>BioDam</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/}" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" th:href="@{/public/}" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+                    <a class="nav-link" th:href="@{/admin/listaValidacion}" href="#">Validaciones</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" th:href="@{/public/conocenos}" href="#">Conocenos</a>
                 </li>
                 <li sec:authorize="hasRole('ADMIN')" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -29,7 +29,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" th:href="@{/admin/nuevoProducto}" href="#">Nuevo producto</a>
                         <a class="dropdown-item" href="#">Nueva categoria</a>
-                        <a class="dropdown-item" href="#">Nuevo usuario</a>
+                        <a class="dropdown-item" th:href="@{/public/registro}" href="#" >Nuevo usuario</a>
                     </div>
                 </li>
             </ul>

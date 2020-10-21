@@ -44,19 +44,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-         .authorizeRequests()
-                .antMatchers("/css/**","/js/**", "/images/**","/register", "/submit-registration","/h2-console/**").permitAll()
-                .antMatchers("/admin/**").hasAnyRole("ADMIN")
-                .antMatchers("/user/**").hasAnyRole("USER")
-                .antMatchers("/").permitAll()
-                .anyRequest().authenticated()
-                .and()
+                .authorizeRequests()
+                    .antMatchers("/css/**","/js/**","/h2-console/**").permitAll()
+                    .antMatchers("/admin/**").hasAnyRole("ADMIN")
+                    .antMatchers("/user/**").hasAnyRole("USER")
+                    .antMatchers("/public/**").permitAll()
+                    .anyRequest().authenticated()
+                    .and()
                 .formLogin()
-                .loginPage("/login")
-                .successHandler(customSuccessHandler)
-                .permitAll()
-                .and()
-                .logout();
+                    .loginPage("/public/")
+                    .loginProcessingUrl("/login")
+                    .successHandler(customSuccessHandler)
+                    .permitAll()
+                    .and()
+                .logout()
+                    .deleteCookies()
+                    .logoutSuccessUrl("/login")
+                    .logoutUrl("/logout")
+                    .permitAll();
+
 
           http.csrf().disable();
           http.headers().frameOptions().disable();

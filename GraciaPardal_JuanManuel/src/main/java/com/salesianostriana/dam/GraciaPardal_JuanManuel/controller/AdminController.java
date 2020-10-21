@@ -2,13 +2,17 @@ package com.salesianostriana.dam.GraciaPardal_JuanManuel.controller;
 
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Categoria;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Producto;
+import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Usuario;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.dto.CategoriaProducto;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.CategoriaServi;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.ProductoServi;
+import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.UsuarioServi;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @Controller
 @AllArgsConstructor
@@ -17,8 +21,8 @@ public class AdminController {
 
     private final ProductoServi productoServi;
     private final CategoriaServi categoriaServi;
+    private  final UsuarioServi usuarioServi;
     private CategoriaProducto categoriaProducto;
-
 
     //Formulario nuevo producto
     @GetMapping("/nuevoProducto")
@@ -99,6 +103,38 @@ public class AdminController {
             return "redirect:/admin/nuevoProducto";
         }
 
+    }
+
+    @GetMapping("/listaValidacion")
+    public String listarValidaciones(Model model){
+
+        if (usuarioServi.usuariosPorValidar().isEmpty()){
+            model.addAttribute("lista", new ArrayList<>());
+        }else{
+            model.addAttribute("lista", usuarioServi.usuariosPorValidar());
+        }
+
+        return usuarioServi.usuariosPorValidar().isEmpty() ? "redirect:/public/" : "validaciones";
+    }
+
+    @GetMapping("/validar/{id}")
+    public  String validarUser(@PathVariable Long id){
+
+        Usuario userEdited = usuarioServi.findById(id); userEdited.setValidado(true);
+        usuarioServi.edit(userEdited);
+
+        return  usuarioServi.usuariosPorValidar().isEmpty() ? "redirect:/admin/listaValidacion": "redirect:/public/";
+
+
+    }
+
+    @GetMapping("/validar/eliminar/{id}")
+    public String borrarUserValidacion(@PathVariable Long id){
+
+        usuarioServi.deleteById(id);
+
+
+        return  usuarioServi.usuariosPorValidar().isEmpty() ? "redirect:/admin/listaValidacion": "redirect:/public/";
     }
 
 

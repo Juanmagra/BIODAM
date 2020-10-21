@@ -17,10 +17,10 @@
                     <a class="nav-link" th:href="@{/public/}" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item" sec:authorize="hasRole('ADMIN')">
-                    <a class="nav-link" href="#">Validaciones</a>
+                    <a class="nav-link" th:href="@{/admin/listaValidacion}" href="#">Validaciones</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" th:href="@{/public/conocenos}" href="#">Conocenos</a>
                 </li>
                 <li sec:authorize="hasRole('ADMIN')" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -29,7 +29,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" th:href="@{/admin/nuevoProducto}" href="#">Nuevo producto</a>
                         <a class="dropdown-item" href="#">Nueva categoria</a>
-                        <a class="dropdown-item" href="#">Nuevo usuario</a>
+                        <a class="dropdown-item" th:href="@{/public/registro}" href="#" >Nuevo usuario</a>
                     </div>
                 </li>
             </ul>

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("/")
+@RequestMapping("/public/")
 public class PublicController {
 
     private final ProductoServi productoServi;
@@ -23,5 +23,13 @@ public class PublicController {
 
         return "Index";
     }
+
+    @GetMapping("/login")
+    public String loginRedirect(Model model){
+
+        return "login";
+    }
+
+    
 
 }

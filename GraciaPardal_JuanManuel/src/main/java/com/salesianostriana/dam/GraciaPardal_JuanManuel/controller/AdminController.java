@@ -53,7 +53,7 @@ public class AdminController {
             System.out.println(producto.getId()+  " Guardado");
         }
 
-        return "redirect:/";
+        return "redirect:/public/";
 
     }
 
@@ -79,7 +79,7 @@ public class AdminController {
         productoServi.findById(id).setEstado(false);
         productoServi.edit(productoServi.findById(id));
 
-        return "redirect:/";
+        return "redirect:/public/";
     }
     //Nueva categoria
     @PostMapping("/submit/categoria")

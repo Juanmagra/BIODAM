@@ -24,9 +24,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2c2ff6d1-422e-4f86-87a7-53bcc3c4ad0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/GraciaPardalJuanManuelApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/GraciaPardalJuanManuelApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/keyboard.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/ajax.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/validator.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/jsScripts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/jsScripts.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +51,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Users\gracia.pajua20\.m2\wrapper\dists\apache-maven-3.6.3-bin\1iopthnavndlasol9gbrbg6bf2\apache-maven-3.6.3" />
+        <option name="mavenHome" value="C:\Users\Juanma\.m2\wrapper\dists\apache-maven-3.6.3-bin\1iopthnavndlasol9gbrbg6bf2\apache-maven-3.6.3" />
       </MavenGeneralSettings>
     </option>
   </component>

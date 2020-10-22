@@ -8,7 +8,8 @@
 <header th:fragment="nav">
     <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg scrolling-navbar">
         <a class="navbar-brand" href="#" th:href="@{/public/}"><strong>BioDam</strong></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -22,33 +23,51 @@
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/public/conocenos}" href="#">Conocenos</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" sec:authorize="hasRole('USER')" th:href="@{/user/carrito}" href="#">Conocenos</a>
+                </li>
                 <li sec:authorize="hasRole('ADMIN')" class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Formularios
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" th:href="@{/admin/nuevoProducto}" href="#">Nuevo producto</a>
                         <a class="dropdown-item" href="#">Nueva categoria</a>
-                        <a class="dropdown-item" th:href="@{/public/registro}" href="#" >Nuevo usuario</a>
+                        <a class="dropdown-item" th:href="@{/public/registro}" href="#">Nuevo usuario</a>
                     </div>
                 </li>
             </ul>
-            <a  sec:authorize="!isAuthenticated()" href="#" th:href="@{/login}"><button type="button" href="#"  class="btn btn-primary">Login</button></a>
+            <a sec:authorize="!isAuthenticated()" href="#" th:href="@{/login}">
+                <button type="button" href="#" class="btn btn-primary">Login</button>
+            </a>
             <form name="logoutForm" th:action="@{/logout}" method="POST" id="logoutForm"></form>
 
-                    <ul sec:authorize="hasAnyRole('ADMIN', 'USER')" class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle"
-                               data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false">
-                                <span th:text="${#authentication.name}">Menú</span> <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="javascript:document.getElementById('logoutForm').submit()">Salir</a>
-                                </li>
-                            </ul>
-                    </ul>
+            <ul sec:authorize="hasAnyRole('ADMIN', 'USER')" class="nav navbar-nav navbar-right">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span th:text="${#authentication.name}">Menú</span></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" th:href="${#authentication.principal.esAdmin} ? '/admin/edit/' +${#authentication.principal.id} : '/user/edit/' +${#authentication.principal.id}" href="#">Editar perfil</a>
+                        <a class="dropdown-item" th:href="@{/user/password/{id}}">Cambiar contraseña</a>
+                        <a class="dropdown-item" th:href="@{/public/registro}" href="#">Nuevo usuario</a>
+                    </div>
+                </li>
+
+                <!--                        <li class="dropdown">-->
+                <!--                            <a href="#" class="dropdown-toggle"-->
+                <!--                               data-toggle="dropdown" role="button"-->
+                <!--                               aria-haspopup="true" aria-expanded="false">-->
+                <!--                                <span th:text="${#authentication.name}">Menú</span> <span class="caret"></span>-->
+                <!--                            </a>-->
+                <!--                            <ul class="dropdown-menu">-->
+                <!--                                <li >-->
+                <!--                                    <a href="javascript:document.getElementById('logoutForm').submit()">Salir</a>-->
+                <!--                                </li>-->
+                <!--                            </ul>-->
+            </ul>
         </div>
     </nav>
 

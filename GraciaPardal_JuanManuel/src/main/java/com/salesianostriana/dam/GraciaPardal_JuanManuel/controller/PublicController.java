@@ -1,5 +1,6 @@
 package com.salesianostriana.dam.GraciaPardal_JuanManuel.controller;
 
+import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Producto;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Usuario;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.ProductoServi;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.UsuarioServi;
@@ -32,7 +33,7 @@ public class PublicController {
     }
 
     @GetMapping("/registro")
-    public String formularioRegistro(Model model){
+    public String formularioRegistro(Model model) {
 
         model.addAttribute("user",  new Usuario());
 
@@ -40,11 +41,25 @@ public class PublicController {
     }
 
     @PostMapping("/submit/user")
-    public String guardarUser(@ModelAttribute Usuario user, BCryptPasswordEncoder bCryptPasswordEncoder){
+    public String guardarUser(@ModelAttribute Usuario user, BCryptPasswordEncoder bCryptPasswordEncoder, @AuthenticationPrincipal Usuario userA){
 
-        user.setContraseña(bCryptPasswordEncoder.encode(user.getContraseña()));
-        usuarioServi.save(user);
 
+        if (user.getId()!=null) {
+            Usuario u = usuarioServi.findById(user.getId());
+            u.setApellidos(user.getApellidos());
+            u.setNombre(user.getNombre());
+            usuarioServi.edit(u);
+        }else{
+            if (userA == null) {
+                userA = new Usuario();
+            }
+            if (userA.isEsAdmin() && userA != null) {
+                user.setValidado(true);
+            }
+            user.setContraseña(bCryptPasswordEncoder.encode(user.getContraseña()));
+            System.out.println("Guardado"+user.getId());
+            usuarioServi.save(user);
+        }
 
         return "redirect:/public/";
     }

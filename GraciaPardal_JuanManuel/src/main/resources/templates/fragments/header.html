@@ -21,9 +21,6 @@
                     <a class="nav-link" th:href="@{/admin/listaValidacion}" href="#">Validaciones</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/public/conocenos}" href="#">Conocenos</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" sec:authorize="hasRole('USER')" th:href="@{/user/carrito}" href="#">Carrito</a>
                 </li>
                 <li sec:authorize="hasRole('ADMIN')" class="nav-item dropdown">
@@ -36,6 +33,9 @@
                         <a class="dropdown-item" href="#">Nueva categoria</a>
                         <a class="dropdown-item" th:href="@{/public/registro}" href="#">Nuevo usuario</a>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/public/conocenos}" href="#">Conocenos</a>
                 </li>
             </ul>
             <a sec:authorize="!isAuthenticated()" href="#" th:href="@{/login}">
@@ -52,21 +52,9 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" th:href="${#authentication.principal.esAdmin} ? '/admin/edit/' +${#authentication.principal.id} : '/user/edit/' +${#authentication.principal.id}" href="#">Editar perfil</a>
                         <a class="dropdown-item" th:href="@{/user/password/{id}}">Cambiar contraseña</a>
-                        <a class="dropdown-item" th:href="@{/public/registro}" href="#">Nuevo usuario</a>
+                        <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">salir</a>
                     </div>
                 </li>
-
-                <!--                        <li class="dropdown">-->
-                <!--                            <a href="#" class="dropdown-toggle"-->
-                <!--                               data-toggle="dropdown" role="button"-->
-                <!--                               aria-haspopup="true" aria-expanded="false">-->
-                <!--                                <span th:text="${#authentication.name}">Menú</span> <span class="caret"></span>-->
-                <!--                            </a>-->
-                <!--                            <ul class="dropdown-menu">-->
-                <!--                                <li >-->
-                <!--                                    <a href="javascript:document.getElementById('logoutForm').submit()">Salir</a>-->
-                <!--                                </li>-->
-                <!--                            </ul>-->
             </ul>
         </div>
     </nav>

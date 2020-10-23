@@ -41,11 +41,14 @@
                                    placeholder="Apellidos">
                         </div>
                     </div>
-                    <div class="form-group col-md-12">
+                    <div class="form-row">
+                    <div class="form-group col">
                         <label for="inputEmail">Email</label>
                         <input required th:field="*{email}" type="email" class="form-control" id="inputEmail"
                                placeholder="Email">
                     </div>
+                    </div>
+
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputContraseña">Contraseña</label>
@@ -57,6 +60,12 @@
                             <input required type="password" class="form-control" id="inputContraseñaBis"
                                    placeholder="Repetir contraseña">
                         </div>
+                    </div>
+                    <div class="form-row" style="margin-left:15px;">
+                    <div class="form-check form-group col-md-4" sec:authorize="hasRole('ADMIN')">
+                        <input th:field="*{esAdmin}" th:value="${checked} ? 'true':'false'" type="checkbox" class="form-check-input" id="adminCheck">
+                        <label class="form-check-label" for="adminCheck" style="margin-left:-15px;">Marcar si es admin</label>
+                    </div>
                     </div>
                     <div>
                         <input type="number" id="id" th:field="*{id}" hidden/>

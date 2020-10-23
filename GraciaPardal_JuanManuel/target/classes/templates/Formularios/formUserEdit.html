@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:margin-top="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+<head th:replace="fragments/head :: head">
+<body>
+<header th:replace="fragments/header :: nav"></header>
+
+<div class="container col-md-8">
+    <div class="row">
+        <div class="card text-white bg-dark col mx-auto" style="width: 20rem; margin-top: 120px;">
+            <div class="card-body">
+                <h4 class="card-title">Formulario de usuario</h4>
+
+                <form method="POST" action="#"
+                      th:action="@{/public/submit/user}" th:object="${user}" >
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputNombre">Nombre</label>
+                            <input required type="text" class="form-control" id="inputNombre" placeholder="Nombre"
+                                   th:field="*{nombre}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputApellidos">Apellido</label>
+                            <input required th:field="*{apellidos}" type="text" class="form-control" id="inputApellidos"
+                                   placeholder="Apellidos">
+                        </div>
+                    </div>
+                    <div class="form-row" hidden>
+                    <div class="form-group col">
+                        <label for="inputEmail">Email</label>
+                        <input required th:field="*{email}"  type="email" class="form-control" id="inputEmail"
+                               placeholder="Email">
+                    </div>
+                    </div>
+
+                    <div hidden>
+                            <input  type="text" class="form-control" id="inputContraseña"
+                                   placeholder="Contraseña" th:field="*{contraseña}">
+                        </div>
+                    <div>
+                        <input type="number" id="id" th:field="*{id}" hidden/>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="validado" th:field="*{validado}"  hidden/>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="esAdmin"  th:field="*{esAdmin}"  hidden/>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary">Guardar</input>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/jsScripts :: scripts"></div>
+</body>
+</html>

@@ -4,6 +4,7 @@
 <head th:replace="fragments/head :: head">
 <body>
     <header th:replace="fragments/header :: nav"></header>
+
     <div class="container col-md-8" >
         <table class="table table-condensed table-striped table-light table-bordered">
             <thead class="thead-dark text-center ">
@@ -23,7 +24,7 @@
                 <td th:text="${prod.id}">ID falso</td>
                 <td th:text="${prod.nombre}">Nombre falso</td>
                 <td th:text="${prod.precio}">precio falso</td>
-                <td th:text="${prod.categoria.nombre}">categoria falsa</td>
+                <td><a th:text="${prod.categoria.nombre}" th:href="@{/public/} + ${prod.categoria.id}" ></a></td>
 
                 <td sec:authorize="hasRole('ADMIN')"> <a  th:href="@{/admin/edit/} + ${prod.id}" >Editar</a>/<button type="button" class="btn btn-outline-light text-dark" data-toggle="modal" th:attr="data-target='#recordDeleteModal'+${prod.id}">Delete</button>
 
@@ -53,6 +54,26 @@
             </tbody>
         </table>
     </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="filtro">Categoria</label>
+            <select th:object="${i}" th:text="${i.nombre}" class="form-control"  id="filtro" >
+                <option th:each="i : ${listaC}" th:value="${i.id}" th:text="${i.nombre}">
+                    <a  th:text="${i.id}" ></a>
+                </option>
+            </select>
+        </div>
+    </div>
+    <button onclick= myFunction() >Busca la categoria</button>
+    <script>
+    function myFunction() {
+    var id = document.getElementById("filtro").innerText;
+
+    window.location="http://localhost:8080/public/"+id;
+
+    console.log(id);
+       }
+    </script>
 
     <div th:replace="fragments/jsScripts :: scripts"></div>
 </body>

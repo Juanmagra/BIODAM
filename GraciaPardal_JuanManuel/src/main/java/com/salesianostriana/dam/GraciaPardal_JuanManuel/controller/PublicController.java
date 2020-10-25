@@ -1,7 +1,9 @@
 package com.salesianostriana.dam.GraciaPardal_JuanManuel.controller;
 
+import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Categoria;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Producto;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Usuario;
+import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.CategoriaServi;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.ProductoServi;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.UsuarioServi;
 import lombok.AllArgsConstructor;
@@ -9,10 +11,9 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import javax.websocket.server.PathParam;
 
 @Controller
 @AllArgsConstructor
@@ -21,14 +22,25 @@ public class PublicController {
 
     private final ProductoServi productoServi;
     private final UsuarioServi usuarioServi;
+    private final CategoriaServi categoriaServi;
 
     //Listar producto
     @GetMapping("/")
     public String listarProductos(Model model, @AuthenticationPrincipal Usuario user){
-        String url="Index";
-        model.addAttribute("lista", productoServi.findAll());
 
-        return url;
+        model.addAttribute("lista", productoServi.findAll());
+        model.addAttribute("listaC", categoriaServi.findAll());
+        
+        return "Index";
+
+    }
+    @GetMapping("/{id}")
+    public String listarProductosFiltrados(Model model, @AuthenticationPrincipal Usuario user, @PathVariable String id){
+
+            model.addAttribute("lista", productoServi.filtrarPorCategoria(categoriaServi.buscarCategoriaPorNombre(id)));
+            model.addAttribute("listaC", categoriaServi.findAll());
+
+        return "Index";
 
     }
 

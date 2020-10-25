@@ -11,4 +11,6 @@ public class CategoriaServi extends BaseService<Categoria, Long, CategoriaRepo> 
     public CategoriaServi(CategoriaRepo repo) {
         super(repo);
     }
+
+    public Categoria buscarCategoriaPorNombre(String nombre) { return repositorio.findByNombre(nombre);}
 }

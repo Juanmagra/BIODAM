@@ -12,7 +12,11 @@
                 <h4 class="card-title">Formulario de usuario</h4>
 
                 <form method="POST" action="#"
-                      th:action="@{/public/submit/user}" th:object="${user}" >
+                      th:action="${#authentication.principal.esAdmin}
+                      ? '/admin/edit/submit'
+                      : '/user/edit/submit'" href="#" th:object="${user}">
+
+                <!--                      th:action="@{/public/submit/user}" th:object="${user}" >-->
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputNombre">Nombre</label>

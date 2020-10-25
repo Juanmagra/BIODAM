@@ -44,11 +44,11 @@ public class GraciaPardalJuanManuelApplication {
 			repoUs.save(admin);
 			admin.setId(repoUs.findAll().get(1).getId());
 
-			Categoria categoria = new Categoria(50L, "Categoria 1");
+				Categoria categoria = new Categoria(50L, "Categoria1");
 			repoCa.save(categoria);
-			Categoria categoria2 = new Categoria(50L, "Categoria 2");
+			Categoria categoria2 = new Categoria(50L, "Categoria2");
 			repoCa.save(categoria2);
-			Categoria categoria3 = new Categoria(50L, "Categoria 3");
+			Categoria categoria3 = new Categoria(50L, "Categoria3");
 			repoCa.save(categoria3);
 
 			List <Categoria> categoriaLista = repoCa.findAll();

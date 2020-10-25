@@ -17,7 +17,7 @@ public class UserController {
 
     private final UsuarioServi usuarioServi;
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/edit/profile/{id}")
     public String editUsuario(@PathVariable Long id, Model model) {
 
         Usuario user = usuarioServi.findById(id);
@@ -28,10 +28,17 @@ public class UserController {
 
     @PostMapping("/edit/submit")
     public String editarUser (@ModelAttribute Usuario user){
-        System.out.println(user);
-        usuarioServi.save(user);
+
+        if (user.getId()!=null) {
+            Usuario u = usuarioServi.findById(user.getId());
+            u.setApellidos(user.getApellidos());
+            u.setNombre(user.getNombre());
+            usuarioServi.edit(u);
+        }
         return "redirect:/public/";
 
     }
+
+
 
 }

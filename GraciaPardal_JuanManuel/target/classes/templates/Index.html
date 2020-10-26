@@ -4,6 +4,7 @@
 <head th:replace="fragments/head :: head">
 <body>
     <header th:replace="fragments/header :: nav"></header>
+    <!-- Search form -->
 
     <div class="container col-md-8" >
 
@@ -123,26 +124,7 @@
 <!--            <input type="submit" value="Search"/>-->
 <!--        </form>-->
     </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="filtro">Categoria</label>
-            <select th:object="${i}" th:text="${i.nombre}" class="form-control"  id="filtro" >
-                <option th:each="i : ${listaC}" th:value="${i.id}" th:text="${i.nombre}">
-                    <a  th:text="${i.id}" ></a>
-                </option>
-            </select>
-        </div>
-    </div>
-    <button onclick= myFunction() >Busca la categoria</button>
-    <script>
-    function myFunction() {
-    var id = document.getElementById("filtro").innerText;
-
-    window.location="http://localhost:8080/public/"+id;
-
-    console.log(id);
-       }
-    </script>
+    
 
     <div th:replace="fragments/jsScripts :: scripts"></div>
 </body>

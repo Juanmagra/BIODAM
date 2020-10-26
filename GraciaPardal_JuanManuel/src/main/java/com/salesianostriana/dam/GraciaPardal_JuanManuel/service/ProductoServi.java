@@ -5,10 +5,11 @@ import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Producto;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Usuario;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.repository.ProductoRepo;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.base.BaseService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Service
@@ -18,5 +19,7 @@ public class ProductoServi extends BaseService<Producto, Long, ProductoRepo> {
         super(repo);
     }
 
-    public List<Producto> filtrarPorCategoria(Categoria categoria){return repositorio.findByCategoria(categoria);}
+    public Page<Producto> productoPorCategoria(Pageable pageable, Categoria c){return repositorio.findByCategoria(pageable, c);}
+
+    public Page<Producto> findAllPaginated(Pageable pageable){return repositorio.findAll(pageable);};
 }

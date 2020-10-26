@@ -7,6 +7,10 @@ import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.CategoriaServi;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.ProductoServi;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.UsuarioServi;
 import lombok.AllArgsConstructor;
+import org.aspectj.apache.bcel.classfile.Module;
+import org.springframework.beans.factory.annotation.Required;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -26,19 +30,10 @@ public class PublicController {
 
     //Listar producto
     @GetMapping("/")
-    public String listarProductos(Model model, @AuthenticationPrincipal Usuario user){
+    public String listarProductos(Model model, Pageable pageable){
 
-        model.addAttribute("lista", productoServi.findAll());
-        model.addAttribute("listaC", categoriaServi.findAll());
-        
-        return "Index";
 
-    }
-    @GetMapping("/{id}")
-    public String listarProductosFiltrados(Model model, @AuthenticationPrincipal Usuario user, @PathVariable String id){
-
-            model.addAttribute("lista", productoServi.filtrarPorCategoria(categoriaServi.buscarCategoriaPorNombre(id)));
-            model.addAttribute("listaC", categoriaServi.findAll());
+        model.addAttribute("lista", productoServi.findAllPaginated(pageable));
 
         return "Index";
 

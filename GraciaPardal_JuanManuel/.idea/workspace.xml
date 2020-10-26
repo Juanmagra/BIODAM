@@ -24,25 +24,14 @@
   <component name="ChangeListManager">
     <list default="true" id="2c2ff6d1-422e-4f86-87a7-53bcc3c4ad0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/MvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/UsuarioServi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/UsuarioServi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Formularios/FormProducto.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Formularios/FormProducto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Formularios/formUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Formularios/formUser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/MvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/MvcConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/UsuarioServi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/UsuarioServi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Formularios/FormProducto.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Formularios/FormProducto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Formularios/formUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Formularios/formUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/GraciaPardalJuanManuelApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/GraciaPardalJuanManuelApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/PublicController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/PublicController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/ProductoRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/ProductoRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/CategoriaServi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/CategoriaServi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/ProductoServi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/ProductoServi.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,21 +68,23 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Repositorios/bbdd-2020/18_SeguridadConHerencia" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Repositorios/Curso-de-Thymeleaf-intermedio/15_PaginacionUIFinalBis" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.catalog" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources" />
-      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\statics" />
-      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\statics\css" />
-      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\css" />
-      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\templates" />
       <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\statics\css\css" />
       <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\statics" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gracia.pajua20\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\templates\Formularios" />
+      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources" />
+      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\statics" />
+      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\statics\css" />
+      <recent name="C:\Users\Juanma\Desktop\BIODAM\GraciaPardal_JuanManuel\src\main\resources\css" />
     </key>
   </component>
   <component name="RunManager">
@@ -167,6 +158,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="309" y="42" key="#Inspections" timestamp="1603634823527">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="309" y="42" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1603634823527" />
     <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602675917838">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -175,46 +170,51 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="446" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1602942905908" />
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1603088524287">
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1603651275253">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1603088524287" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1603279337058">
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1603651275253" />
+    <state x="171" y="288" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1603318542664">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1603279337058" />
-    <state width="1323" height="144" key="GridCell.Tab.0.bottom" timestamp="1603298912535">
+    <state x="171" y="288" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1603318542664" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1603716847490">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="144" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603298912535" />
-    <state width="1323" height="144" key="GridCell.Tab.0.center" timestamp="1603298912535">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1603716847490" />
+    <state width="1323" height="32" key="GridCell.Tab.0.bottom" timestamp="1603733378006">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="144" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1603298912535" />
-    <state width="1323" height="144" key="GridCell.Tab.0.left" timestamp="1603298912534">
+    <state width="1323" height="32" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603733378006" />
+    <state width="1323" height="32" key="GridCell.Tab.0.center" timestamp="1603733378005">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="144" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1603298912534" />
-    <state width="1323" height="144" key="GridCell.Tab.0.right" timestamp="1603298912535">
+    <state width="1323" height="32" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1603733378005" />
+    <state width="1323" height="32" key="GridCell.Tab.0.left" timestamp="1603733378005">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="144" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603298912535" />
+    <state width="1323" height="32" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1603733378005" />
+    <state width="1323" height="32" key="GridCell.Tab.0.right" timestamp="1603733378006">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="32" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603733378006" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1603206058213">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603206058213" />
-    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1603206058213">
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603586920517" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1603586920517" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1603586920517">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1603206058213" />
-    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1603206058213">
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1603586920517" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1603586920517">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1603206058213" />
-    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1603206058213">
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1603586920517" />
+    <state x="184" y="9" key="SettingsEditor" timestamp="1603382163105">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1603206058213" />
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1603382163105" />
     <state x="162" y="99" width="1042" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1603205206029">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

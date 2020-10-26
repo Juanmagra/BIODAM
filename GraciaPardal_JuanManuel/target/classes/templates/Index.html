@@ -4,7 +4,10 @@
 <head th:replace="fragments/head :: head">
 <body>
     <header th:replace="fragments/header :: nav"></header>
+    <!-- Search form -->
+
     <div class="container col-md-8" >
+
         <table class="table table-condensed table-striped table-light table-bordered">
             <thead class="thead-dark text-center ">
             <tr>
@@ -23,7 +26,7 @@
                 <td th:text="${prod.id}">ID falso</td>
                 <td th:text="${prod.nombre}">Nombre falso</td>
                 <td th:text="${prod.precio}">precio falso</td>
-                <td th:text="${prod.categoria.nombre}">categoria falsa</td>
+                <td><a th:text="${prod.categoria.nombre}" th:href="@{/public/} + ${prod.categoria.id}" ></a></td>
 
                 <td sec:authorize="hasRole('ADMIN')"> <a  th:href="@{/admin/edit/} + ${prod.id}" >Editar</a>/<button type="button" class="btn btn-outline-light text-dark" data-toggle="modal" th:attr="data-target='#recordDeleteModal'+${prod.id}">Delete</button>
 
@@ -52,7 +55,76 @@
             </tr>
             </tbody>
         </table>
+        <!--Inicio de nav paginacon-->
+        <div class="row" id="nav-navegacion">
+
+            <div th:if="${lista.totalPages != 1}"
+                 class="form-group col-md-11 pagination-centered">
+
+                <ul class="pagination">
+
+                    <!-- Si el número de página es cero, deshabilitamos el enlace -->
+
+                    <li th:class="${lista.number == 0} ? disabled" >
+                        <!-- Este enlace nos debe llevar a la primera página --> <a
+                            class="pageLink" th:href="@{/public/(page=1)}">&laquo;</a>
+
+                    </li>
+
+                    <!-- Si el número de página es cero, deshabilitamos el enlace -->
+
+                    <li th:class="${lista.number == 0} ? disabled">
+                        <!-- Este enlace nos debe llevar a la página anterior --> <a
+                            class="pageLink"
+                            th:href="@{/public/(page=${lista.number})}">&larr;</a>
+
+                    </li>
+
+                    <!-- Este bucle genera los enlaces para las demás páginas -->
+
+                    <li
+                            th:class="${lista.number == (page-1)} ? 'active pointer-disabled'"
+                            th:each="page : ${#numbers.sequence(1, lista.totalPages)}">
+
+                        <a class="pageLink" th:href="@{/public/(page=${page})}"
+                           th:text="${page}"></a>
+
+                    </li>
+
+                    <!-- Enlace a la siguiente página; si estamos en la última queda desabilitado  -->
+
+                    <li
+                            th:class="${lista.number == (lista.totalPages - 1)} ? disabled">
+
+                        <a class="pageLink"
+                           th:href="@{/public/(page=${lista.number + 2})}">&rarr;</a>
+
+                    </li>
+
+                    <!-- Enlace a la última página; si estamos en la última queda desabilitado  -->
+
+                    <li
+                            th:class="${lista.number == (lista.totalPages - 1)} ? disabled">
+
+                        <a class="pageLink"
+                           th:href="@{/public/(page=${lista.totalPages})}">&raquo;</a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+        <!--Final de nav paginacon-->
     </div>
+
+<!--        <form  th:action="@{/public/}" method="get">-->
+<!--            <input class="form-control" type="text" placeholder="Search" th:value="${search}" aria-label="Search" name="search" id="search">-->
+<!--            <input type="submit" value="Search"/>-->
+<!--        </form>-->
+    </div>
+    
 
     <div th:replace="fragments/jsScripts :: scripts"></div>
 </body>

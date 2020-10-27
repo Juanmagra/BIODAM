@@ -30,7 +30,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" th:href="@{/admin/nuevoProducto}" href="#">Nuevo producto</a>
-                        <a class="dropdown-item" href="#">Nueva categoria</a>
+                        <a class="dropdown-item" th:href="@{/admin/categorias}">Nueva categoria</a>
                         <a class="dropdown-item" th:href="@{/public/registro}" href="#">Nuevo usuario</a>
                     </div>
                 </li>
@@ -45,7 +45,7 @@
 
             <ul sec:authorize="hasAnyRole('ADMIN', 'USER')" class="nav navbar-nav navbar-right">
 
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" style="margin-right:20px;">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span th:text="${#authentication.name}">Menú</span></a>

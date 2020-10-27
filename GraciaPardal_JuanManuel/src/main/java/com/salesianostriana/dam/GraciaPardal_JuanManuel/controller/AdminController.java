@@ -89,6 +89,7 @@ public class AdminController {
     @PostMapping("/submit/categoria")
     public  String guardarCategoria(@ModelAttribute CategoriaProducto categoriaProducto, Model model){
         model.addAttribute("categoriaProducto", categoriaProducto);
+        model.addAttribute("categoria", new Categoria());
 
         categoriaServi.save(new Categoria(1L, categoriaProducto.getNombreCat()));
         if (categoriaProducto.getIdProducto()!=null) {
@@ -159,5 +160,20 @@ public class AdminController {
 
     }
 
+    //Guardar una categoria
+    @PostMapping("/submit/UnaCategoria")
+    public String guardarUnaCategoria(@ModelAttribute Categoria categoria){
+
+        categoriaServi.save(categoria);
+
+        return "redirect:/admin/categorias";
+    }
+
+    @GetMapping("/categorias")
+    public String showCategoria( Model model){
+        model.addAttribute("lista", categoriaServi.findAll());
+        model.addAttribute("categoria", new Categoria());
+        return "categorias";
+    }
 
 }

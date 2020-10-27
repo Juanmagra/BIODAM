@@ -89,6 +89,7 @@ public class AdminController {
     @PostMapping("/submit/categoria")
     public  String guardarCategoria(@ModelAttribute CategoriaProducto categoriaProducto, Model model){
         model.addAttribute("categoriaProducto", categoriaProducto);
+        model.addAttribute("categoria", new Categoria());
 
         categoriaServi.save(new Categoria(1L, categoriaProducto.getNombreCat()));
         if (categoriaProducto.getIdProducto()!=null) {
@@ -137,5 +138,42 @@ public class AdminController {
         return  usuarioServi.usuariosPorValidar().isEmpty() ? "redirect:/admin/listaValidacion": "redirect:/public/";
     }
 
+    @GetMapping("/edit/profile/{id}")
+    public String editUsuario(@PathVariable Long id, Model model) {
+
+        Usuario user = usuarioServi.findById(id);
+        model.addAttribute("user", user);
+
+        return "Formularios/formUserEdit";
+    }
+
+    @PostMapping("/edit/submit")
+    public String editarUser (@ModelAttribute Usuario user){
+
+        if (user.getId()!=null) {
+            Usuario u = usuarioServi.findById(user.getId());
+            u.setApellidos(user.getApellidos());
+            u.setNombre(user.getNombre());
+            usuarioServi.edit(u);
+        }
+        return "redirect:/public/";
+
+    }
+
+    //Guardar una categoria
+    @PostMapping("/submit/UnaCategoria")
+    public String guardarUnaCategoria(@ModelAttribute Categoria categoria){
+
+        categoriaServi.save(categoria);
+
+        return "redirect:/admin/categorias";
+    }
+
+    @GetMapping("/categorias")
+    public String showCategoria( Model model){
+        model.addAttribute("lista", categoriaServi.findAll());
+        model.addAttribute("categoria", new Categoria());
+        return "categorias";
+    }
 
 }

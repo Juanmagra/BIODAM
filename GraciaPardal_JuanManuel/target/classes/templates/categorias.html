@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:margin-top="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+<head th:replace="fragments/head :: head">
+<body>
+<header th:replace="fragments/header :: nav"></header>
+
+
+<div class="container col-md-6">
+    <div class="container col-md">
+        <div class="row">
+            <div class="card text-white bg-dark col mx-auto" style="width: 20rem; margin-top: 120px;">
+                <div class="card-body">
+                    <form method="POST" action="#"
+                          th:action="@{/admin/submit/UnaCategoria}" href="#" th:object="${categoria}">
+                        <div>
+                            <input type="number" id="id" th:field="*{id}" hidden/>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md">
+                                <label for="inputNombre">Nueva Categoria</label>
+                                <input required type="text" class="form-control" id="inputNombre" placeholder="Nombre"
+                                       th:field="*{nombre}">
+                            </div>
+                            <input type="submit" class="btn btn-primary"></input>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table style="margin-top:-4px;" class="table table-condensed table-striped table-light table-bordered">
+        <thead class="thead-dark text-center ">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col" sec:authorize="hasRole('ADMIN')">Editar/Eliminar</th>
+        </tr>
+        </thead>
+
+
+        <tbody class="text-center tbody-clear">
+        <tr th:each="cat : ${lista}">
+
+            <td th:text="${cat.id}">ID falso</td>
+            <td th:text="${cat.nombre}">Nombre falso</td>
+
+            <td sec:authorize="hasRole('ADMIN')"><a th:href="@{/admin/edit/categoria} + ${cat.id}">Editar</a>/
+                <button type="button" class="btn btn-outline-light text-dark" data-toggle="modal"
+                        th:attr="data-target='#recordDeleteModal'+${cat.id}">Delete
+                </button>
+
+                <!-- Modal de confirmación delete -->
+                <div class="modal fade" th:attr="id='recordDeleteModal'+${cat.id}" tabindex="-1" role="dialog"
+                     aria-labelledby="recordDeleteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="recordDeleteModalLabel">Confirmación</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ¿Estas seguro que desea borrar este producto?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                <a href="newRecordForm.html" class="btn btn-primary"
+                                   th:attr="href='/admin/delete/categoria'+${cat.id}">Yes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin modal de confirmación delete -->
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div th:replace="fragments/jsScripts :: scripts"></div>
+</body>
+</html>

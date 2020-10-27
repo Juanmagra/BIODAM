@@ -160,7 +160,7 @@ footer {
 /*endregion*/
 
 
-/*** Paginación***/
+/*** Paginación_START***/
 .pagination {
   display: inline-block;
   padding-left: 0;
@@ -311,4 +311,16 @@ footer {
     pointer-events: none;
 }
 
-/*** Paginación***/
+/*** Paginación_END***/
+
+/*** Validación de contraseñas***/
+.ocultar {
+    display: none;
+}
+
+.mostrar {
+    display: block;
+}
+
+
+

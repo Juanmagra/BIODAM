@@ -28,6 +28,6 @@ public class LineaPedido {
     @ManyToOne
     private Producto producto;
 
-
+    private Integer catidad;
 
 }

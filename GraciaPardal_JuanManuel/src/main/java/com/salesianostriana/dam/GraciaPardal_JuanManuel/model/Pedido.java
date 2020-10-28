@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -22,7 +23,7 @@ public class Pedido {
     @GeneratedValue
     private Long id;
 
-    private Date fecha;
+    private LocalDate fecha;
     private String estado;
 
     @ManyToOne

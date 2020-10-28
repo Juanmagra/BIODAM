@@ -22,26 +22,32 @@
     <select />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="2c2ff6d1-422e-4f86-87a7-53bcc3c4ad0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/basededatos.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/basededatos.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bs4-form-validation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bs4-form-validation.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Formularios/formPass.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Formularios/formPass.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Formularios/formUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Formularios/formUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Formularios/formPass.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Formularios/formPass.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Formularios/formUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Formularios/formUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/LineaPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/LineaPedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/LineaPedidoRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/LineaPedidoRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/PedidoRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/PedidoRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/UsuarioRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/UsuarioRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/UserDetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/UserDetailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/LineaPedidoServi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/LineaPedidoServi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/PedidoServi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/PedidoServi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/UsuarioServi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/UsuarioServi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/LineaPedido$LineaPedidoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/LineaPedido$LineaPedidoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/LineaPedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/LineaPedido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Pedido$PedidoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Pedido$PedidoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Pedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Pedido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/LineaPedidoRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/LineaPedidoRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/PedidoRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/PedidoRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/UsuarioRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/UsuarioRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/UserDetailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/UserDetailServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/LineaPedidoServi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/LineaPedidoServi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/PedidoServi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/PedidoServi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/UsuarioServi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/UsuarioServi.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
-=======
-    <list default="true" id="2c2ff6d1-422e-4f86-87a7-53bcc3c4ad0b" name="Default Changelist" comment="" />
->>>>>>> feature/crud_categoria
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,8 +83,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Repositorios/Curso-de-Thymeleaf-intermedio/15_PaginacionUIFinalBis" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Repositorios/ProyectoFinalJunio" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.catalog" />
   </component>
@@ -179,53 +184,34 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="446" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1602942905908" />
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1603651275253">
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1603919486569">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1603651275253" />
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1603919486569" />
     <state x="171" y="288" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1603318542664">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="171" y="288" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1603318542664" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1603716847490">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1603917996369">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1603716847490" />
-<<<<<<< HEAD
-    <state width="1323" height="183" key="GridCell.Tab.0.bottom" timestamp="1603819935574">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1603917996369" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1603919673401">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="183" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603819935574" />
-    <state width="1323" height="183" key="GridCell.Tab.0.center" timestamp="1603819935574">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603919673401" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1603919673401">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="183" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1603819935574" />
-    <state width="1323" height="183" key="GridCell.Tab.0.left" timestamp="1603819935573">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1603919673401" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1603919673401">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="183" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1603819935573" />
-    <state width="1323" height="183" key="GridCell.Tab.0.right" timestamp="1603819935574">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1603919673401" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1603919673401">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="183" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603819935574" />
-=======
-    <state width="1323" height="161" key="GridCell.Tab.0.bottom" timestamp="1603798824456">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603798824456" />
-    <state width="1323" height="161" key="GridCell.Tab.0.center" timestamp="1603798824455">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1603798824455" />
-    <state width="1323" height="161" key="GridCell.Tab.0.left" timestamp="1603798824455">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1603798824455" />
-    <state width="1323" height="161" key="GridCell.Tab.0.right" timestamp="1603798824456">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603798824456" />
->>>>>>> feature/crud_categoria
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603919673401" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1603206058213">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

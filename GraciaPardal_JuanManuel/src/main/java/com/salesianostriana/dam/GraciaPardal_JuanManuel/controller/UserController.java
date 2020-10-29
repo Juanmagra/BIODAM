@@ -2,30 +2,37 @@ package com.salesianostriana.dam.GraciaPardal_JuanManuel.controller;
 
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.LineaPedido;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Pedido;
+import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Producto;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Usuario;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.LineaPedidoServi;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.PedidoServi;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.ProductoServi;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.UsuarioServi;
-import com.sun.xml.bind.v2.model.core.ID;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.Id;
-import javax.sound.sampled.Line;
-import java.security.Principal;
+import javax.servlet.http.HttpSession;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @AllArgsConstructor
 @RequestMapping("/user/")
 public class UserController {
 
+    @Autowired
+    HttpSession httpSession;
     private final UsuarioServi usuarioServi;
     private final ProductoServi productoServi;
     private final LineaPedidoServi lineaPedidoServi;
     private final PedidoServi pedidoServi;
+
 
     @GetMapping("/edit/profile/{id}")
     public String editUsuario(@PathVariable Long id, Model model) {
@@ -50,38 +57,94 @@ public class UserController {
     }
 
 
-    @GetMapping("/añadirToCarrito/{id}")
-    public String añadirACarrito(@ModelAttribute LineaPedido lineaPedido, @PathVariable Long id){
+    /* Parte del carrito*/
 
-        lineaPedidoServi.addProducto(productoServi.findById(id));
-
-        return"redirect:/public/";
+    @ModelAttribute("carrito")
+    public List<Producto> productosCarrito() {
+        List<Long> contenido = (List<Long>) httpSession.getAttribute("carrito");
+        return (contenido == null) ? null : productoServi.variosPorId(contenido);
     }
 
-    @GetMapping("/borrarDeCarrito/{id}")
-    public String removeProductFromCart(@PathVariable("id") Long id) {
+    @ModelAttribute("total_carrito")
+    public Double totalCarrito() {
+        List<Producto> productosCarrito = productosCarrito();
+        if (productosCarrito != null)
+            return productosCarrito.stream()
+                    .mapToDouble(p -> p.getPrecio())
+                    .sum();
+        return 0.0;
+    }
 
-        lineaPedidoServi.removeProducto(productoServi.findById(id));
-        //TODO
+//    @ModelAttribute("mis_pedidos")
+//    public List<Pedido> misCompras() {
+//        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+//        usuarioCompra = usuarioServi.buscarPorEmail(email);
+//        return pedidoServi.porPropietario(usuarioCompra );
+//    }
+
+    @GetMapping("/carrito")
+    public String verCarrito(Model model) {
+        return "carrito";
+    }
+
+    @GetMapping("/carrito/add/{id}")
+    public String addCarrito(Model model, @PathVariable Long id) {
+        List<Long> contenido = (List<Long>) httpSession.getAttribute("carrito");
+        if (contenido == null)
+            contenido = new ArrayList<>();
+        if (!contenido.contains(id))
+            contenido.add(id);
+        httpSession.setAttribute("carrito", contenido);
         return "redirect:/user/carrito";
     }
 
+    @GetMapping("/carrito/eliminar/{id}")
+    public String borrarDeCarrito(Model model, @PathVariable Long id) {
+        List<Long> contenido = (List<Long>) httpSession.getAttribute("carrito");
+        if (contenido == null)
+            return "redirect:/public/";
+        contenido.remove(id);
+        if (contenido.isEmpty())
+            httpSession.removeAttribute("carrito");
+        else
+            httpSession.setAttribute("carrito", contenido);
+        return "redirect:/user/carrito";
 
-    @PostMapping("/guardarCarrito")
-    public String guardarCarrito(@ModelAttribute("carrito") Pedido p, Model model, Principal prin) {
+    }
 
-        pedidoServi.guardarCarrito(p, prin);
 
-        lineaPedidoServi.addLineaDePedido(p);
+    @GetMapping("/carrito/finalizar")
+    public String checkout() {
+        Pedido pedido= new Pedido();
+        List<Long> contenido = (List<Long>) httpSession.getAttribute("carrito");
+        if (contenido == null)
+            return "redirect:/public";
 
-        p.setLineaPedido(lineaPedidoServi.findAll());
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        pedido.setUsuario(usuarioServi.buscarPorEmail(email));
+        pedido.setFecha(LocalDate.now());
 
-        lineaPedidoServi.borrarMap();
+        pedidoServi.save(pedido);
+
+        for (Long id:contenido
+             ) {
+            LineaPedido lineaPedido = new LineaPedido();
+            lineaPedido.setCatidad(1);
+            lineaPedido.setProducto(productoServi.findById(id));
+            pedido.addLineaPedido(lineaPedido);
+            lineaPedidoServi.save(lineaPedido);
+
+
+        }
+
+        pedidoServi.edit(pedido);
+
+     //   Compra c = compraServicio.insertar(new Compra(), usuario);
+     //   productos.forEach(p -> compraServicio.addProductoCompra(p, c));
+     //   session.removeAttribute("carrito");
 
         return "redirect:/public/";
 
     }
-
-
 
 }

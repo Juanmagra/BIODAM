@@ -2,7 +2,6 @@ package com.salesianostriana.dam.GraciaPardal_JuanManuel.service;
 
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Categoria;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Producto;
-import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Usuario;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.repository.ProductoRepo;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.base.BaseService;
 import org.springframework.data.domain.Page;
@@ -21,5 +20,7 @@ public class ProductoServi extends BaseService<Producto, Long, ProductoRepo> {
 
     public Page<Producto> productoPorCategoria(Pageable pageable, Categoria c){return repositorio.findByCategoria(pageable, c);}
 
-    public Page<Producto> findAllPaginated(Pageable pageable){return repositorio.findAll(pageable);};
+    public Page<Producto> findAllPaginated(Pageable pageable){return repositorio.findAll(pageable);}
+
+    public List<Producto> variosPorId(List<Long> ids) { return repositorio.findAllById(ids); }
 }

@@ -1,21 +1,20 @@
 package com.salesianostriana.dam.GraciaPardal_JuanManuel;
 
-import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.*;
+import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Categoria;
+import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Producto;
+import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Usuario;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.repository.*;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.PedidoServi;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.UsuarioServi;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.sound.sampled.Line;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 
 @SpringBootApplication()

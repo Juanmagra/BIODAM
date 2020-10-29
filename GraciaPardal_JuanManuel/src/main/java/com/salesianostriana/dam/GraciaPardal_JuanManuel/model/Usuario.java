@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.type.TrueFalseType;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,15 +14,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
-@Entity
-@Builder
 @AllArgsConstructor
+@Entity
 public class Usuario implements UserDetails {
 
     @Id
@@ -37,20 +34,20 @@ public class Usuario implements UserDetails {
     private String contraseña;
     private boolean validado;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "usuario")
     private List<Pedido> pedidos = new ArrayList<>();
 
 
 
     //Helpers
     public void addPedido(Pedido p) {
-        p.setUser(this);
+        p.setUsuario(this);
         this.pedidos.add(p);
     }
 
     public void removePedido(Pedido p) {
         this.pedidos.remove(p);
-        p.setUser(null);
+        p.setUsuario(null);
     }
 
     @Override

@@ -135,6 +135,7 @@ public class UserController {
             lineaPedidoServi.save(lineaPedido);
         }
         pedidoServi.edit(pedido);
+        httpSession.removeAttribute("carrito");
         return "redirect:/user/compra/factura/"+pedido.getId();
 
     }

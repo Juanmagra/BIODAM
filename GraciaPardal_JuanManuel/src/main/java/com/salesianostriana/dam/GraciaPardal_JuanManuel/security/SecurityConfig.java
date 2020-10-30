@@ -29,16 +29,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//                auth
-//                .inMemoryAuthentication()
-//                .passwordEncoder(NoOpPasswordEncoder.getInstance())
-//                .withUser("admin")
-//                .password("admin")
-//                .roles("ADMIN");
-//    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -65,28 +55,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
           http.csrf().disable();
           http.headers().frameOptions().disable();
 
-//        http
-//                .authorizeRequests()
-//                .antMatchers("/css/**","/js/**", "/images/**","/register", "/submit-registration", "/h2-console/**").permitAll()
-//                .antMatchers("/admin/**").hasRole("ADMIN")
-//                .antMatchers("/user/**").hasRole("USER")
-//                .and()
-//                .formLogin()
-//                .loginPage("/login")
-//                .permitAll()
-//                .successHandler(customSuccesHandler)
-//                .loginProcessingUrl("/login")
-//                .defaultSuccessUrl("/index", true)
-//                .usernameParameter("username")
-//                .passwordParameter("password")
-//                .and()
-//                .logout()
-//                .logoutUrl("/logout")
-//                .permitAll();
-//        Añadimos esto para poder seguir accediendo a la consola de H2
-//        con Spring Security habilitado.
-//        http.csrf().disable();
-//        http.headers().frameOptions().disable();
 
     }
 

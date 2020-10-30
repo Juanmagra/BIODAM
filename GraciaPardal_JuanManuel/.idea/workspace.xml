@@ -24,21 +24,38 @@
   <component name="ChangeListManager">
     <list default="true" id="2c2ff6d1-422e-4f86-87a7-53bcc3c4ad0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraciaPardal_JuanManuel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GraciaPardal_JuanManuel.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/GraciaPardalJuanManuelApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/GraciaPardalJuanManuelApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/PublicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/PublicController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/LineaPedidoServi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/LineaPedidoServi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/ProductoRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/ProductoRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/ProductoServi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/ProductoServi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Formularios/FormProducto.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Formularios/FormProducto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Formularios/formPass.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Formularios/formUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Formularios/formUser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/carrito.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/carrito.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/categorias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/categorias.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/conocenos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/conocenos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/GraciaPardalJuanManuelApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/GraciaPardalJuanManuelApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/PublicController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/PublicController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Pedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Pedido.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/LineaPedidoServi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/LineaPedidoServi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/ProductoRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/repository/ProductoRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/MvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/MvcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/security/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/ProductoServi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/salesianostriana/dam/GraciaPardal_JuanManuel/service/ProductoServi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Formularios/FormProducto.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Formularios/FormProducto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Formularios/formUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Formularios/formUser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/carrito.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/carrito.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/categorias.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/categorias.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/conocenos.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/conocenos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -189,22 +206,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1603975538968" />
-    <state width="1323" height="122" key="GridCell.Tab.0.bottom" timestamp="1604065265097">
+    <state width="1323" height="133" key="GridCell.Tab.0.bottom" timestamp="1604075384135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="122" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604065265097" />
-    <state width="1323" height="122" key="GridCell.Tab.0.center" timestamp="1604065265097">
+    <state width="1323" height="133" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604075384135" />
+    <state width="1323" height="133" key="GridCell.Tab.0.center" timestamp="1604075384135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="122" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604065265097" />
-    <state width="1323" height="122" key="GridCell.Tab.0.left" timestamp="1604065265096">
+    <state width="1323" height="133" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604075384135" />
+    <state width="1323" height="133" key="GridCell.Tab.0.left" timestamp="1604075384135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="122" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604065265096" />
-    <state width="1323" height="122" key="GridCell.Tab.0.right" timestamp="1604065265097">
+    <state width="1323" height="133" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604075384135" />
+    <state width="1323" height="133" key="GridCell.Tab.0.right" timestamp="1604075384135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="122" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604065265097" />
+    <state width="1323" height="133" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604075384135" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1603206058213">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

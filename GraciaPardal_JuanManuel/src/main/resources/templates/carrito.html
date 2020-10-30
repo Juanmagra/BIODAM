@@ -12,8 +12,9 @@
             <div class="row" th:if="${carrito == null}">
                 <div class=" col-md-10 mx-auto">
                     <div class="container">
-                        <h2 class="text-center">Aún no ha seleccionado ningún producto para comprar</h2>
-                        <a th:href="@{/public/}" class="btn btn-primary">Home</a>
+                        <div class="row">
+                            <h2 class="text-center">Aún no ha seleccionado producto para la comprar</h2>
+                        </div>
                     </div>
                 </div>
             </div>

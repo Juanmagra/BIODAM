@@ -35,19 +35,19 @@ public class GraciaPardalJuanManuelApplication {
 			Date fecha = new Date();
 
 
-			Usuario user = new Usuario(100L, "Juan Usuario", "Gracia", "user@user.com", false, passwordEncoder.encode("user"),true,listaPedido);
+			Usuario user = new Usuario(100L, "Juan Manuel", "Gracia", "user@user.com", false, passwordEncoder.encode("user"),true,listaPedido);
 			repoUs.save(user);
 			user.setId(repoUs.findAll().get(0).getId());
 
-			Usuario admin = new Usuario(100L, "Juan Admin", "Gracia", "admin@admin.com", true, passwordEncoder.encode("admin"), true,listaPedido);
+			Usuario admin = new Usuario(100L, "Luis Miguel", "Lopez", "admin@admin.com", true, passwordEncoder.encode("admin"), true,listaPedido);
 			repoUs.save(admin);
 			admin.setId(repoUs.findAll().get(1).getId());
 
-			Categoria categoria = new Categoria(50L, "Categoria1");
+			Categoria categoria = new Categoria(50L, "Perifericos");
 			repoCa.save(categoria);
-			Categoria categoria2 = new Categoria(50L, "Categoria2");
+			Categoria categoria2 = new Categoria(50L, "CPU");
 			repoCa.save(categoria2);
-			Categoria categoria3 = new Categoria(50L, "Categoria3");
+			Categoria categoria3 = new Categoria(50L, "Pantallas");
 			repoCa.save(categoria3);
 
 			List <Categoria> categoriaLista = repoCa.findAll();
@@ -56,11 +56,25 @@ public class GraciaPardalJuanManuelApplication {
 			categoria3.setId(categoriaLista.get(2).getId());
 
 
-			for (int i = 0; i < 17; i++) {
-				Producto producto = new Producto(56L, "Portatil", 500D, true, categoria);
+			for (int i = 0; i < 5; i++) {
+				Producto producto = new Producto(56L, "Portatil", 500D, true, categoria2);
 				repoPr.save(producto);
 				producto.setId(repoPr.findAll().get(i).getId());
-
+			}
+			for (int i = 0; i < 5; i++) {
+				Producto producto = new Producto(80L, "Pantalla", 50D, true, categoria3);
+				repoPr.save(producto);
+				producto.setId(repoPr.findAll().get(i).getId());
+			}
+			for (int i = 0; i < 5; i++) {
+				Producto producto = new Producto(80L, "Ratón", 15D, true, categoria);
+				repoPr.save(producto);
+				producto.setId(repoPr.findAll().get(i).getId());
+			}
+			for (int i = 0; i < 5; i++) {
+				Producto producto = new Producto(80L, "Teclado", 20D, true, categoria);
+				repoPr.save(producto);
+				producto.setId(repoPr.findAll().get(i).getId());
 			}
 
 //			Producto producto = new Producto(56L, "Portatil", 500D, true, categoria);

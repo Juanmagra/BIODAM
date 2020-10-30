@@ -91,13 +91,13 @@
                     Indique el nombre de la categoria
                 </div>
                 <form method="post" action="#"
-                      th:action="@{/admin/submit/categoria}" th:object="${categoriaProducto}">
+                     style="margin-left:15px;" th:action="@{/admin/submit/categoria}" th:object="${categoriaProducto}">
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputNombreCategoria">Nombre de categoria </label>
                             <input type="text" class="form-control" id="inputNombreCategoria" placeholder="Nombre"
-                                   th:field="*{nombreCat}">
+                                   th:field="*{nombreCat}" required>
                             <input type="text" class="form-control" id="inputIdCategoria" placeholder="Nombre"
                                    th:field="*{idCategoria}" hidden>
                             <input type="text" class="form-control" id="inputIdProducto" placeholder="Nombre"

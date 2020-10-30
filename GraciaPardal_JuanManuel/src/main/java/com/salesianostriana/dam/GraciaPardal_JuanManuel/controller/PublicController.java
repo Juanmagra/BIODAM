@@ -10,10 +10,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @AllArgsConstructor
@@ -35,6 +32,14 @@ public class PublicController {
 
     }
 
+    @GetMapping("/{id}")
+    public String listarProductosPorCategoria(Model model, Pageable pageable, @PathVariable Long id){
+
+        model.addAttribute("lista", productoServi.findAllByCategoria(categoriaServi.findById(id)));
+
+        return "Index";
+    }
+
     @GetMapping("/registro")
     public String formularioRegistro(Model model) {
 
@@ -46,7 +51,7 @@ public class PublicController {
     @PostMapping("/submit/user")
     public String guardarUser(@ModelAttribute Usuario user, BCryptPasswordEncoder bCryptPasswordEncoder, @AuthenticationPrincipal Usuario userA){
 
-
+        boolean enBase=true;
         if (user.getId()!=null) {
             Usuario u = usuarioServi.findById(user.getId());
             u.setApellidos(user.getApellidos());
@@ -60,11 +65,30 @@ public class PublicController {
                 user.setValidado(true);
             }
             user.setContraseña(bCryptPasswordEncoder.encode(user.getContraseña()));
-            System.out.println("Guardado"+user.getId());
-            usuarioServi.save(user);
+            for (Usuario u: usuarioServi.findAll()
+                 ) {
+                if (u.getEmail().equals(user.getEmail())){
+                    enBase=true;
+                    break;
+                }else {
+                    enBase=false;
+                }
+            }
+            if (!enBase){
+                usuarioServi.save(user);
+            }
+
+
         }
 
         return "redirect:/public/";
+    }
+
+
+    @GetMapping("/conocenos")
+    public String conocenos(){
+
+        return "conocenos";
     }
     
 

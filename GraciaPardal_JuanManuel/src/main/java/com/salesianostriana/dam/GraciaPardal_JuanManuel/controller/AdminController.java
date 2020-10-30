@@ -11,6 +11,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 
@@ -24,9 +25,13 @@ public class AdminController {
     private  final UsuarioServi usuarioServi;
     private CategoriaProducto categoriaProducto;
 
+
     //Formulario nuevo producto
     @GetMapping("/nuevoProducto")
     public String mostrarForm (Model model){
+
+
+
         model.addAttribute("categoriaProducto", categoriaProducto);
         model.addAttribute("categoria", new Categoria());
         model.addAttribute("categorias", categoriaServi.findAll());
@@ -36,7 +41,7 @@ public class AdminController {
     }
     //Nuevo producto
     @PostMapping("/submit")
-    public String añadirProducto(@ModelAttribute Producto producto){
+    public String añadirProducto(@ModelAttribute Producto producto, RedirectAttributes redirectAttrs){
 
         Boolean guardado= null;
         for (Producto p:  productoServi.findAll()){
@@ -56,8 +61,11 @@ public class AdminController {
             productoServi.save(producto);
             System.out.println(producto.getId()+  " Guardado");
         }
+        redirectAttrs
+                .addFlashAttribute("mensaje", "Producto añadido con exito")
+                .addFlashAttribute("clase", "success");
 
-        return "redirect:/public/";
+        return "redirect:/admin/nuevoProducto";
 
     }
 
@@ -164,7 +172,10 @@ public class AdminController {
     @PostMapping("/submit/UnaCategoria")
     public String guardarUnaCategoria(@ModelAttribute Categoria categoria){
 
-        categoriaServi.save(categoria);
+        if (!categoria.getNombre().equals("") && !categoria.getNombre().equals(" ")){
+            categoriaServi.save(categoria);
+        }
+
 
         return "redirect:/admin/categorias";
     }
@@ -175,5 +186,7 @@ public class AdminController {
         model.addAttribute("categoria", new Categoria());
         return "categorias";
     }
+
+
 
 }

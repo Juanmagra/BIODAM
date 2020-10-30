@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/head :: head">
+<body>
+<header th:replace="fragments/header :: nav"></header>
+	<div class="container">
+		<div class="row" th:if="${#lists.isEmpty(mis_compras)}">
+		<div class="col-md-10 mx-auto">
+				<div class="jumbotron">
+					<div class="container">
+						<h2 class="text-center">Aún no ha realizado ninguna comprar</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" th:unless="${#lists.isEmpty(mis_compras)}">
+		<div class="container col-md-6" >
+		<table class="table table-condensed table-striped table-light table-bordered">
+			<thead class="thead-dark text-center ">
+			<tr>
+				<th scope="col" >ID</th>
+				<th scope="col" >Fecha</th>
+				<th scope="col" >Detalle</th>
+			</tr>
+			</thead>
+
+
+			<tbody class="text-center tbody-clear">
+			<tr th:each="compra : ${mis_compras}"  >
+
+				<td th:text="${compra.id}">ID falso</td>
+				<td th:text="${compra.fecha}">ID falso</td>
+				<td><a th:href="@{/user/compra/factura/{id}(id=${compra.id})}" class="btn btn-info">Ver factura</a></td>
+				</tbody>
+			</table>
+			
+			
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+			crossorigin="anonymous"></script>
+
+
+
+
+</body>
+</html>

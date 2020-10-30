@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity"
+>
+<head th:replace="fragments/head :: head">
+
+
+<body>
+<header th:replace="fragments/header :: nav"></header>
+<div class="container">
+    <div class="row" style="margin-top:110px;">
+        <div class="card text-white bg-dark col-md-10 mx-auto">
+            <div class="row" th:if="${carrito == null}">
+                <div class=" col-md-10 mx-auto">
+                    <div class="container">
+                        <div class="row">
+                            <h2 class="text-center">Aún no ha seleccionado producto para la comprar</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" th:unless="${carrito == null}">
+                <div class="col-sm-12 col-md-10 mx-auto">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th class="text-center">Precio</th>
+                            <th> </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="producto : ${carrito}">
+                            <td class="col-md-10">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">&nbsp;
+                                            <span th:text="${producto.nombre}">Nombre del producto</span>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td class="col-md-1 text-center"><strong
+                                    th:text="${#numbers.formatCurrency(producto.precio)}"></strong></td>
+                            <td class="col-md-1">
+                                <a th:href="@{/user/carrito/eliminar/{id}(id=${producto.id})}" class="btn btn-danger">
+                                    <span class="glyphicon glyphicon-remove"></span> Eliminar
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td> </td>
+                            <td><h3>Total</h3></td>
+                            <td class="text-right"><h3>
+                                <strong th:text="${#numbers.formatCurrency(total_carrito)}">$31.53</strong>
+                            </h3></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td>
+                                <a th:href="@{/public/}" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    Continuar comprando
+                                </a>
+                            </td>
+                            <td>
+                                <a th:href="@{/user/carrito/finalizar}" class="btn btn-success">
+                                    Finalizar compra <span class="glyphicon glyphicon-play"></span>
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+</body>
+</html>

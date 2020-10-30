@@ -6,9 +6,7 @@ import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.base.BaseService
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UsuarioServi extends BaseService<Usuario, Long, UsuarioRepo> {
@@ -17,7 +15,7 @@ public class UsuarioServi extends BaseService<Usuario, Long, UsuarioRepo> {
         super(repo);
     }
 
-    public Optional<Usuario> buscarPorEmail(String email){return repositorio.findFirstByEmail(email);}
+    public Usuario buscarPorEmail(String email){return repositorio.findFirstByEmail(email);}
 
     public List<Usuario> usuariosPorValidar(){
         List<Usuario> listaValidaciones = new ArrayList<>();

@@ -31,13 +31,6 @@ public class Pedido {
     @OneToMany(mappedBy="pedido")
     private List<LineaPedido> lineaPedido = new ArrayList<>();
 
-
-
-
-
-
-
-
     //Helpers
     public void addLineaPedido(LineaPedido o) {
         o.setPedido(this);

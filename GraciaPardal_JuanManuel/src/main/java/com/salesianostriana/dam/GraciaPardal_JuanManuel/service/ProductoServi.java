@@ -20,7 +20,12 @@ public class ProductoServi extends BaseService<Producto, Long, ProductoRepo> {
 
     public Page<Producto> productoPorCategoria(Pageable pageable, Categoria c){return repositorio.findByCategoria(pageable, c);}
 
-    public Page<Producto> findAllPaginated(Pageable pageable){return repositorio.findAll(pageable);}
+    public Page<Producto> findAllPaginated(Pageable pageable){
+
+        return repositorio.findAll(pageable);
+    }
 
     public List<Producto> variosPorId(List<Long> ids) { return repositorio.findAllById(ids); }
+
+
 }

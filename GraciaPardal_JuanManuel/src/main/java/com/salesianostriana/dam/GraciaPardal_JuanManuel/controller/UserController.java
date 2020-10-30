@@ -75,12 +75,12 @@ public class UserController {
         return 0.0;
     }
 
-//    @ModelAttribute("mis_pedidos")
-//    public List<Pedido> misCompras() {
-//        String email = SecurityContextHolder.getContext().getAuthentication().getName();
-//        usuarioCompra = usuarioServi.buscarPorEmail(email);
-//        return pedidoServi.porPropietario(usuarioCompra );
-//    }
+    @ModelAttribute("mis_compras")
+    public List<Pedido> misCompras() {
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        Usuario usuarioCompra = usuarioServi.buscarPorEmail(email);
+        return pedidoServi.porPropietario(usuarioCompra );
+    }
 
     @GetMapping("/carrito")
     public String verCarrito(Model model) {
@@ -133,18 +133,26 @@ public class UserController {
             lineaPedido.setProducto(productoServi.findById(id));
             pedido.addLineaPedido(lineaPedido);
             lineaPedidoServi.save(lineaPedido);
-
-
         }
-
         pedidoServi.edit(pedido);
+        return "redirect:/user/compra/factura/"+pedido.getId();
 
-     //   Compra c = compraServicio.insertar(new Compra(), usuario);
-     //   productos.forEach(p -> compraServicio.addProductoCompra(p, c));
-     //   session.removeAttribute("carrito");
+    }
 
-        return "redirect:/public/";
 
+    @GetMapping("/compra/factura/{id}")
+    public String factura(Model model, @PathVariable Long id) {
+        Pedido p = pedidoServi.findById(id);
+        List<LineaPedido> listaLineas = lineaPedidoServi.lineasDeUnPedido(p);
+        model.addAttribute("listaLineas", listaLineas);
+        model.addAttribute("carrito", p);
+        model.addAttribute("total_compra",listaLineas.stream().mapToDouble(pr -> pr.getProducto().getPrecio()).sum());
+        return "factura";
+    }
+
+    @GetMapping("/misCompras")
+    public String verMisCompras(Model model) {
+        return "/listado_facturas";
     }
 
 }

@@ -22,7 +22,7 @@
 
 
             <tbody class="text-center tbody-clear">
-            <tr th:each="prod : ${lista}" th:if="${prod.estado == true}" >
+            <tr th:each="prod : ${lista}" th:if="${prod.estado}" >
 
                 <td th:text="${prod.id}">ID falso</td>
                 <td th:text="${prod.nombre}">Nombre falso</td>

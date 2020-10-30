@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/head :: head">
+<body>
+<header th:replace="fragments/header :: nav"></header>
+<div class="container">
+    <div class="row" style="margin-top:110px;">
+        <div class="card text-white bg-dark col-md-10 mx-auto">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mx-auto">
+                        <div class="invoice-title">
+                            <h2>Factura de Compra #<span th:text="${carrito.id}">1234</span> </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 ">
+                        <address>
+                            <span
+                                th:text="${carrito.usuario.nombre + ' ' + carrito.usuario.apellidos}"></span><br>
+                            <span th:text="${carrito.usuario.email}"></span><br>
+                        </address>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-10 mx-auto">
+                    <div class="panel panel-default" style="margin-top:20px;">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <strong>Listado de productos</strong>
+                            </h3>
+                        </div>
+                        <div class="panel-body invoice-body">
+                            <div class="table-responsive" style="margin-top:-80px;">
+                                <table class="table table-condensed">
+                                    <thead>
+                                    <tr>
+                                        <td><strong>Producto</strong></td>
+                                        <td class="text-right"><strong>Precio</strong></td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="linea : ${listaLineas}">
+                                        <td><span th:text="${linea.producto.nombre}">Producto</span></td>
+                                        <td class="text-right"><span
+                                                th:text="${#numbers.formatCurrency(linea.producto.precio)}">123€</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="thick-line text-right"><strong>Total</strong></td>
+                                        <td class="thick-line text-right"><span
+                                                th:text="${#numbers.formatCurrency(total_compra)}"></span></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<br>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+</body>
+</html>

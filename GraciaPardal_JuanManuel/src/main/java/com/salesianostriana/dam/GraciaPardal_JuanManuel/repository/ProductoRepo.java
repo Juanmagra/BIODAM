@@ -13,5 +13,5 @@ import java.util.List;
 @Repository
 public interface ProductoRepo extends JpaRepository <Producto, Long> {
 
-    Page<Producto> findByCategoria(Pageable pageable, Categoria categoria);
+    List<Producto> findByCategoria(Categoria categoria);
 }

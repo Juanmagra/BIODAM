@@ -1,23 +1,16 @@
 package com.salesianostriana.dam.GraciaPardal_JuanManuel.controller;
 
-import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Categoria;
-import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Producto;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.model.Usuario;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.CategoriaServi;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.ProductoServi;
 import com.salesianostriana.dam.GraciaPardal_JuanManuel.service.UsuarioServi;
 import lombok.AllArgsConstructor;
-import org.aspectj.apache.bcel.classfile.Module;
-import org.springframework.beans.factory.annotation.Required;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import javax.websocket.server.PathParam;
 
 @Controller
 @AllArgsConstructor
@@ -39,6 +32,14 @@ public class PublicController {
 
     }
 
+    @GetMapping("/{id}")
+    public String listarProductosPorCategoria(Model model, Pageable pageable, @PathVariable Long id){
+
+        model.addAttribute("lista", productoServi.findAllByCategoria(categoriaServi.findById(id)));
+
+        return "Index";
+    }
+
     @GetMapping("/registro")
     public String formularioRegistro(Model model) {
 
@@ -50,7 +51,7 @@ public class PublicController {
     @PostMapping("/submit/user")
     public String guardarUser(@ModelAttribute Usuario user, BCryptPasswordEncoder bCryptPasswordEncoder, @AuthenticationPrincipal Usuario userA){
 
-
+        boolean enBase=true;
         if (user.getId()!=null) {
             Usuario u = usuarioServi.findById(user.getId());
             u.setApellidos(user.getApellidos());
@@ -64,11 +65,30 @@ public class PublicController {
                 user.setValidado(true);
             }
             user.setContraseña(bCryptPasswordEncoder.encode(user.getContraseña()));
-            System.out.println("Guardado"+user.getId());
-            usuarioServi.save(user);
+            for (Usuario u: usuarioServi.findAll()
+                 ) {
+                if (u.getEmail().equals(user.getEmail())){
+                    enBase=true;
+                    break;
+                }else {
+                    enBase=false;
+                }
+            }
+            if (!enBase){
+                usuarioServi.save(user);
+            }
+
+
         }
 
         return "redirect:/public/";
+    }
+
+
+    @GetMapping("/conocenos")
+    public String conocenos(){
+
+        return "conocenos";
     }
     
 

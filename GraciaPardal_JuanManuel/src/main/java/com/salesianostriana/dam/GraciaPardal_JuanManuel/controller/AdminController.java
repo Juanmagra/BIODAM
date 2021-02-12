@@ -172,7 +172,7 @@ public class AdminController {
     @PostMapping("/submit/UnaCategoria")
     public String guardarUnaCategoria(@ModelAttribute Categoria categoria){
 
-        if (!categoria.getNombre().equals("") && !categoria.getNombre().equals(" ")){
+        if (!categoria.getNombre().equals(" ") && !categoria.getNombre().equals("  ")){
             categoriaServi.save(categoria);
         }
 
